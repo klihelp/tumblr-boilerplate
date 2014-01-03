@@ -51,8 +51,8 @@ address { font-style: normal; }
  */
  
 
-</style>
 
+</style>
 	</head>
 	<body>
 	
@@ -70,7 +70,7 @@ address { font-style: normal; }
 		</header>
 		
 
-		<div class="SiteContent">
+		<main class="SiteContent">
 			{block:Posts}
 				{block:Text}
 					<article class="Article Article--text">
@@ -188,10 +188,10 @@ address { font-style: normal; }
 				{/block:Audio}
 				
 			{/block:Posts}
-		</div>
+		</main>
 
 		
-		<div id="SiteFooter" class="SiteFooter">
+		<footer id="SiteFooter" class="SiteFooter">
 			<div class="Pagination">
 				{block:PreviousPage}
 					<a href="{PreviousPage}">&#171; Previous</a>
@@ -201,7 +201,7 @@ address { font-style: normal; }
 					<a href="{NextPage}">Next &#187;</a>
 				{/block:NextPage}
 			</div>
-		</div>
+		</footer>
 		
 	</body>
 </html>
