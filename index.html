@@ -63,14 +63,16 @@ address { font-style: normal; }
 
 </style>
 	</head>
+
+
 	<body>
 
 		<header id="SiteHeader" class="SiteHeader">
-			<h1>{Title}</h1>
+			<h1 class="SiteTitle">{Title}</h1>
 
-			<div>
+			<div class="SiteDescription">
 				{block:Description}
-					<p id="description">{Description}</p>
+					{Description}
 				{/block:Description}
 			</div>
 		</header>
