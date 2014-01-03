@@ -7,6 +7,8 @@
 		{block:Description}
 			<meta name="description" content="{MetaDescription}" />
 		{/block:Description}
+
+		<link rel="stylesheet" href="link_to_normalize_asset">
 		
 <style>
  
@@ -123,13 +125,17 @@ address { font-style: normal; }
 				
 				{block:Quote}
 					<article class="Article Article--quote">
-						<div class="Quote">
-							"{Quote}"
-						</div>
+						<blockquote>
+							<div class="Quote">
+								"{Quote}"
+							</div>
 
-						{block:Source}
-							<div class="Source">{Source}</div>
-						{/block:Source}
+							{block:Source}
+								<footer>
+									<cite class="Source">{Source}</cite>
+								</footer>
+							{/block:Source}
+						</blockquote>
 					</article>
 				{/block:Quote}
 				
