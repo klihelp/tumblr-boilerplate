@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{Title}</title>
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		{block:Description}
+			<meta name="description" content="{MetaDescription}" />
+		{/block:Description}
+		
+<style>
+ 
+/*
+ **********************
+ * Tumblr boilerplate - clean starter theme 
+ * made by Hugo Vieilledent
+ * 2014-01-03
+ **********************
+ */
+ 
+/**
+ * Base
+ */
+ 
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
+html { line-height: 1.5; font-size: 16px; font-family: Helvetica, sans-serif; color: #000; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+body { padding: 0; margin: 0; }
+h1, h2, h3, h4 { margin-top: 0; line-height: 1.1; }
+h1 { font-size: rem(36); margin-bottom: em(5,36); }
+h2 { font-size: rem(22); margin-bottom: em(7,22); }
+h3 { font-size: rem(16); }
+h4 { font-size: rem(12); }
+a { text-decoration: none; color: black; }
+a:hover { text-decoration: underline; }
+a:visited { color: black; }
+a:active { color: black; }
+iframe, img { max-width: 100%; }
+img { vertical-align: bottom; }
+a img { border: 0; }
+figure { margin: 0; }
+small { font-size: 80%;}
+.align-center { text-align: center; }
+blockquote,
+ol, ul, dl, dd, h1, h2, h3, h4, h5, h6, p, pre, fieldset, input, textarea { margin: 0 0 1em; }
+fieldset { border: 0; padding: 0; }
+blockquote { font-style: italic; }
+address { font-style: normal; }
+
+/**
+ * your style
+ */
+ 
+
+</style>
+
+	</head>
+	<body>
+	
+	
+	<body>
+	
+		<header class="SiteHeader">
+			<h1>{Title}</h1>
+			
+			<div>
+				{block:Description}
+					<p id="description">{Description}</p>
+				{/block:Description}
+			</div>
+		</header>
+		
+
+		<div class="SiteContent">
+			{block:Posts}
+				{block:Text}
+					<article class="Article Article--text">
+						{block:Title}
+							<h3 class="Title"><a href="{Permalink}">{Title}</a></h3>
+						{/block:Title}
+						<div class="Detail">
+							{Body}
+						</div>
+					</article>
+				{/block:Text}
+				
+				{block:Photo}
+					<article class="Article Article--photo">
+						<div class="Media">
+							<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+						</div>
+
+						{block:Caption}
+							<div class="Caption">{Caption}</div>
+						{/block:Caption}
+					</article>
+				{/block:Photo}
+				
+				{block:Panorama}
+					<article class="Article Article--panorama">
+						{LinkOpenTag}
+							<div class="Media">
+								<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+							</div>
+						{LinkCloseTag}
+						
+						{block:Caption}
+							<div class="Caption">{Caption}</div>
+						{/block:Caption}
+					</article>
+				{/block:Panorama}
+				
+				{block:Photoset}
+					<article class="Article Article--photoset">
+						<div class="Media">
+							{Photoset-500}
+						</div>
+						
+						{block:Caption}
+							<div class="Caption">{Caption}</div>
+						{/block:Caption}
+					</article>
+				{/block:Photoset}
+				
+				{block:Quote}
+					<article class="Article Article--quote">
+						<div class="Quote">
+							"{Quote}"
+						</div>
+
+						{block:Source}
+							<div class="Source">{Source}</div>
+						{/block:Source}
+					</article>
+				{/block:Quote}
+				
+				{block:Link}
+					<article class="Article Article--link">
+						<div class="Link">
+							<a href="{URL}" {Target}>{Name}</a>
+						</div>
+
+						{block:Description}
+							<div class="Detail">{Description}</div>
+						{/block:Description}
+					</article>
+				{/block:Link}
+				
+				{block:Chat}
+					<article class="Article Article--chat">
+						{block:Title}
+							<h3 class="Title"><a href="{Permalink}">{Title}</a></h3>
+						{/block:Title}
+
+						<div class="Chat">
+							{block:Lines}
+								<p class="{Alt} user_{UserNumber}">
+									{block:Label}
+										<span class="label">{Label}</span>
+									{/block:Label}{Line}
+								</p>
+							{/block:Lines}
+						</div>
+					</article>
+				{/block:Chat}
+				
+				{block:Video}
+					<article class="Article Article--video">
+						<div class="Media">
+							{Video-500}
+						</div>
+						
+						{block:Caption}
+							<div class="Caption">{Caption}</div>
+						{/block:Caption}
+					</article>
+				{/block:Video}
+				
+				{block:Audio}
+					<article class="Article Article--audio">
+						<div class="Media">
+							{AudioPlayerBlack}
+						</div>
+						
+						{block:Caption}
+							<div class="Caption">{Caption}</div>
+						{/block:Caption}
+					</article>
+				{/block:Audio}
+				
+			{/block:Posts}
+		</div>
+
+		
+		<div id="SiteFooter" class="SiteFooter">
+			<div class="Pagination">
+				{block:PreviousPage}
+					<a href="{PreviousPage}">&#171; Previous</a>
+				{/block:PreviousPage}
+				
+				{block:NextPage}
+					<a href="{NextPage}">Next &#187;</a>
+				{/block:NextPage}
+			</div>
+		</div>
+		
+	</body>
+</html>
