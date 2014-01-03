@@ -83,39 +83,49 @@ address { font-style: normal; }
 
 				{block:Photo}
 					<article class="Article Article--photo">
-						<div class="Media">
-							<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-						</div>
+						<figure class="Media">
+							<div class="Image">
+								<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 
-						{block:Caption}
-							<div class="Caption">{Caption}</div>
-						{/block:Caption}
 					</article>
 				{/block:Photo}
 
 				{block:Panorama}
 					<article class="Article Article--panorama">
 						{LinkOpenTag}
-							<div class="Media">
-								<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-							</div>
+							<figure class="Media">
+								<div class="Image Image--Panorama">
+									<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+								</div>
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							</figure>
 						{LinkCloseTag}
-
-						{block:Caption}
-							<div class="Caption">{Caption}</div>
-						{/block:Caption}
 					</article>
 				{/block:Panorama}
 
 				{block:Photoset}
 					<article class="Article Article--photoset">
-						<div class="Media">
-							{Photoset-500}
-						</div>
-
-						{block:Caption}
-							<div class="Caption">{Caption}</div>
-						{/block:Caption}
+						<figure class="Media">
+							<div class="Photoset">
+								{Photoset-500}
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					</article>
 				{/block:Photoset}
 
@@ -167,25 +177,31 @@ address { font-style: normal; }
 
 				{block:Video}
 					<article class="Article Article--video">
-						<div class="Media">
-							{Video-500}
-						</div>
-
-						{block:Caption}
-							<div class="Caption">{Caption}</div>
-						{/block:Caption}
+						<figure class="Media">
+							<div class="Video">
+								{Video-500}
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					</article>
 				{/block:Video}
 
 				{block:Audio}
 					<article class="Article Article--audio">
-						<div class="Media">
-							{AudioPlayerBlack}
-						</div>
-
-						{block:Caption}
-							<div class="Caption">{Caption}</div>
-						{/block:Caption}
+						<figure class="Media">
+							<div class="Audio">
+								{AudioPlayerBlack}
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					</article>
 				{/block:Audio}
 
