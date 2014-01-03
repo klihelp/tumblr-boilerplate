@@ -18,3 +18,7 @@ tumblr boilerplate - clean starter theme
 # Browser support
 
 ie > internet explorer 8, some html5 semantic markup used here is not supported
+
+# todo
+
++ microformats

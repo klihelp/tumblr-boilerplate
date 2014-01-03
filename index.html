@@ -9,7 +9,7 @@
 		{block:Description}
 			<meta name="description" content="{MetaDescription}" />
 		{/block:Description}
-		
+
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content='IE=edge' />
 		<meta name="viewport" content="width=device-width" />
@@ -78,39 +78,26 @@ address { font-style: normal; }
 
 		<main class="SiteContent">
 			{block:Posts}
-				{block:Text}
-					<article class="Article Article--text">
-						{block:Title}
-							<h3 class="Title"><a href="{Permalink}">{Title}</a></h3>
-						{/block:Title}
-						<div class="Detail">
-							{Body}
-						</div>
-					</article>
-				{/block:Text}
+				<article class="Article">
+					{block:Text}
+						<div class="Article--text">
+							<header class="Header">
+								{block:Title}
+									<h1 class="Title"><a href="{Permalink}">{Title}</a></h1>
+								{/block:Title}
+							</header>
 
-				{block:Photo}
-					<article class="Article Article--photo">
-						<figure class="Media">
-							<div class="Image">
-								<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+							<div class="Detail">
+								{Body}
 							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
-						</figure>
+						</div>
+					{/block:Text}
 
-					</article>
-				{/block:Photo}
-
-				{block:Panorama}
-					<article class="Article Article--panorama">
-						{LinkOpenTag}
+					{block:Photo}
+						<div class="Article--photo">
 							<figure class="Media">
-								<div class="Image Image--Panorama">
-									<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+								<div class="Image">
+									<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 								</div>
 								{block:Caption}
 									<figcaption class="Caption">
@@ -118,101 +105,140 @@ address { font-style: normal; }
 									</figcaption>
 								{/block:Caption}
 							</figure>
-						{LinkCloseTag}
-					</article>
-				{/block:Panorama}
+						</div>
+					{/block:Photo}
 
-				{block:Photoset}
-					<article class="Article Article--photoset">
-						<figure class="Media">
-							<div class="Photoset">
-								{Photoset-500}
+					{block:Panorama}
+						<div class="Article--panorama">
+							{LinkOpenTag}
+								<figure class="Media">
+									<div class="Image Image--Panorama">
+										<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+									</div>
+									{block:Caption}
+										<figcaption class="Caption">
+											{Caption}
+										</figcaption>
+									{/block:Caption}
+								</figure>
+							{LinkCloseTag}
+						</div>
+					{/block:Panorama}
+
+					{block:Photoset}
+						<div class="Article--photoset">
+							<figure class="Media">
+								<div class="Photoset">
+									{Photoset-500}
+								</div>
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							</figure>
+						</div>
+					{/block:Photoset}
+
+					{block:Quote}
+						<div class="Article--quote">
+							<blockquote>
+								<div class="Quote">
+									"{Quote}"
+								</div>
+
+								{block:Source}
+									<footer>
+										<cite class="Source">{Source}</cite>
+									</footer>
+								{/block:Source}
+							</blockquote>
+						</div>
+					{/block:Quote}
+
+					{block:Link}
+						<div class="Article--link">
+							<header class="Link">
+								<h1><a href="{URL}" {Target}>{Name}</a></h1>
+							</header>
+
+							{block:Description}
+								<div class="Detail">{Description}</div>
+							{/block:Description}
+						</div>
+					{/block:Link}
+
+					{block:Chat}
+						<div class="Article--chat">
+							<header class="Title">
+								{block:Title}
+									<h1><a href="{Permalink}">{Title}</a></h1>
+								{/block:Title}
+							</header>
+
+							<div class="Chat">
+								{block:Lines}
+									<p class="{Alt} user_{UserNumber}">
+										{block:Label}
+											<span class="label">{Label}</span>
+										{/block:Label}{Line}
+									</p>
+								{/block:Lines}
 							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
-						</figure>
-					</article>
-				{/block:Photoset}
+						</div>
+					{/block:Chat}
 
-				{block:Quote}
-					<article class="Article Article--quote">
-						<blockquote>
-							<div class="Quote">
-								"{Quote}"
-							</div>
+					{block:Video}
+						<div class="Article--video">
+							<figure class="Media">
+								<div class="Video">
+									{Video-500}
+								</div>
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							</figure>
+						</div>
+					{/block:Video}
 
-							{block:Source}
-								<footer>
-									<cite class="Source">{Source}</cite>
-								</footer>
-							{/block:Source}
-						</blockquote>
-					</article>
-				{/block:Quote}
+					{block:Audio}
+						<div class="Article--audio">
+							<figure class="Media">
+								<div class="Audio">
+									{AudioPlayerBlack}
+								</div>
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							</figure>
+						</div>
+					{/block:Audio}
 
-				{block:Link}
-					<article class="Article Article--link">
-						<div class="Link">
-							<a href="{URL}" {Target}>{Name}</a>
+					<footer class="Article-Footer"
+						<div class="Tags">
+							{block:HasTags}
+								{block:Tags}
+									<span class="Tag"><a href="{TagURL}" title="{lang:Posts tagged Tag}"> {Tag} </a></span>
+								{/block:Tags}
+							{/block:HasTags}
 						</div>
 
-						{block:Description}
-							<div class="Detail">{Description}</div>
-						{/block:Description}
-					</article>
-				{/block:Link}
-
-				{block:Chat}
-					<article class="Article Article--chat">
-						{block:Title}
-							<h3 class="Title"><a href="{Permalink}">{Title}</a></h3>
-						{/block:Title}
-
-						<div class="Chat">
-							{block:Lines}
-								<p class="{Alt} user_{UserNumber}">
-									{block:Label}
-										<span class="label">{Label}</span>
-									{/block:Label}{Line}
-								</p>
-							{/block:Lines}
+						<div class="Time">
+							<span class="date"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></span>
 						</div>
-					</article>
-				{/block:Chat}
 
-				{block:Video}
-					<article class="Article Article--video">
-						<figure class="Media">
-							<div class="Video">
-								{Video-500}
-							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
-						</figure>
-					</article>
-				{/block:Video}
-
-				{block:Audio}
-					<article class="Article Article--audio">
-						<figure class="Media">
-							<div class="Audio">
-								{AudioPlayerBlack}
-							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
-						</figure>
-					</article>
-				{/block:Audio}
-
+						<div class="Social">
+							<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}"></a></span>
+							<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank"></a></span>
+							<span class="Reblog">{ReblogButton color="Black"}</span>
+							<span class="Like">{LikeButton color="Black"}</span>
+						</div>
+					</footer>
+				</article>
 			{/block:Posts}
 		</main>
 
