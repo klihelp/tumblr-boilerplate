@@ -80,56 +80,33 @@ address { font-style: normal; }
 			{block:Posts}
 				<article class="Article">
 					{block:Text}
-						<div class="Article--text">
-							<header class="Header">
-								{block:Title}
-									<h1 class="Title"><a href="{Permalink}">{Title}</a></h1>
-								{/block:Title}
-							</header>
+						<header class="Header">
+							{block:Title}
+								<h1 class="Title"><a href="{Permalink}">{Title}</a></h1>
+							{/block:Title}
+						</header>
 
-							<div class="Detail">
-								{Body}
-							</div>
-						</div>
+						<div class="Detail">{Body}</div>
 					{/block:Text}
 
 					{block:Photo}
-						<div class="Article--photo">
-							<figure class="Media">
-								<div class="Image">
-									<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-								</div>
-								{block:Caption}
-									<figcaption class="Caption">
-										{Caption}
-									</figcaption>
-								{/block:Caption}
-							</figure>
-						</div>
+						<figure class="Media">
+							<div class="Image">
+								<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					{/block:Photo}
 
 					{block:Panorama}
-						<div class="Article--panorama">
-							{LinkOpenTag}
-								<figure class="Media">
-									<div class="Image Image--Panorama">
-										<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-									</div>
-									{block:Caption}
-										<figcaption class="Caption">
-											{Caption}
-										</figcaption>
-									{/block:Caption}
-								</figure>
-							{LinkCloseTag}
-						</div>
-					{/block:Panorama}
-
-					{block:Photoset}
-						<div class="Article--photoset">
+						{LinkOpenTag}
 							<figure class="Media">
-								<div class="Photoset">
-									{Photoset-500}
+								<div class="Image Image--Panorama">
+									<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
 								</div>
 								{block:Caption}
 									<figcaption class="Caption">
@@ -137,103 +114,104 @@ address { font-style: normal; }
 									</figcaption>
 								{/block:Caption}
 							</figure>
-						</div>
+						{LinkCloseTag}
+					{/block:Panorama}
+
+					{block:Photoset}
+						<figure class="Media">
+							<div class="Photoset">
+								{Photoset-500}
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					{/block:Photoset}
 
 					{block:Quote}
-						<div class="Article--quote">
-							<blockquote>
-								<div class="Quote">
-									"{Quote}"
-								</div>
+						<blockquote>
+							<div class="Quote">
+								"{Quote}"
+							</div>
 
-								{block:Source}
-									<footer>
-										<cite class="Source">{Source}</cite>
-									</footer>
-								{/block:Source}
-							</blockquote>
-						</div>
+							{block:Source}
+								<cite class="Source">{Source}</cite>
+							{/block:Source}
+						</blockquote>
 					{/block:Quote}
 
 					{block:Link}
-						<div class="Article--link">
-							<header class="Link">
-								<h1><a href="{URL}" {Target}>{Name}</a></h1>
-							</header>
+						<header class="Link">
+							<h1><a href="{URL}" {Target}>{Name}</a></h1>
+						</header>
 
-							{block:Description}
-								<div class="Detail">{Description}</div>
-							{/block:Description}
-						</div>
+						{block:Description}
+							<div class="Detail">{Description}</div>
+						{/block:Description}
 					{/block:Link}
 
 					{block:Chat}
-						<div class="Article--chat">
-							<header class="Title">
-								{block:Title}
-									<h1><a href="{Permalink}">{Title}</a></h1>
-								{/block:Title}
-							</header>
+						<header class="Title">
+							{block:Title}
+								<h1><a href="{Permalink}">{Title}</a></h1>
+							{/block:Title}
+						</header>
 
-							<div class="Chat">
-								{block:Lines}
-									<p class="{Alt} user_{UserNumber}">
-										{block:Label}
-											<span class="label">{Label}</span>
-										{/block:Label}{Line}
-									</p>
-								{/block:Lines}
-							</div>
+						<div class="Chat">
+							{block:Lines}
+								<p class="{Alt} user_{UserNumber}">
+									{block:Label}
+										<span class="label">{Label}</span>
+									{/block:Label}{Line}
+								</p>
+							{/block:Lines}
 						</div>
 					{/block:Chat}
 
 					{block:Video}
-						<div class="Article--video">
-							<figure class="Media">
-								<div class="Video">
-									{Video-500}
-								</div>
-								{block:Caption}
-									<figcaption class="Caption">
-										{Caption}
-									</figcaption>
-								{/block:Caption}
-							</figure>
-						</div>
+						<figure class="Media">
+							<div class="Video">
+								{Video-500}
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					{/block:Video}
 
 					{block:Audio}
-						<div class="Article--audio">
-							<figure class="Media">
-								<div class="Audio">
-									{AudioPlayerBlack}
-								</div>
-								{block:Caption}
-									<figcaption class="Caption">
-										{Caption}
-									</figcaption>
-								{/block:Caption}
-							</figure>
-						</div>
+						<figure class="Media">
+							<div class="Audio">
+								{AudioPlayerBlack}
+							</div>
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
+						</figure>
 					{/block:Audio}
 
 					<footer class="Article-Footer"
-						<div class="Tags">
-							{block:HasTags}
+						{block:HasTags}
+							<div class="Tags">
 								{block:Tags}
 									<span class="Tag"><a href="{TagURL}" title="{lang:Posts tagged Tag}"> {Tag} </a></span>
 								{/block:Tags}
-							{/block:HasTags}
-						</div>
+							</div>
+						{/block:HasTags}
 
 						<div class="Time">
 							<span class="date"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></span>
 						</div>
 
 						<div class="Social">
-							<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}"></a></span>
-							<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank"></a></span>
+							<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
+							<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
 							<span class="Reblog">{ReblogButton color="Black"}</span>
 							<span class="Like">{LikeButton color="Black"}</span>
 						</div>
