@@ -131,10 +131,8 @@ address { font-style: normal; }
 					{/block:Photoset}
 
 					{block:Quote}
-						<blockquote>
-							<div class="Quote">
-								"{Quote}"
-							</div>
+						<blockquote class="Quote">
+							<p>"{Quote}"</p>
 
 							{block:Source}
 								<cite class="Source">{Source}</cite>
@@ -200,14 +198,12 @@ address { font-style: normal; }
 						{block:HasTags}
 							<div class="Tags">
 								{block:Tags}
-									<span class="Tag"><a href="{TagURL}" title="{lang:Posts tagged Tag}"> {Tag} </a></span>
+									<a class="Tag" ref="tag" href="{TagURL}" title="{lang:Posts tagged Tag}"> {Tag} </a>
 								{/block:Tags}
 							</div>
 						{/block:HasTags}
 
-						<div class="Time">
-							<span class="date"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></span>
-						</div>
+						<time class="Time"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
 
 						<div class="Social">
 							<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
