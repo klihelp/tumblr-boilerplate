@@ -9,21 +9,21 @@
 		{/block:Description}
 
 		<link rel="stylesheet" href="link_to_normalize_asset">
-		
+
 <style>
- 
+
 /*
  **********************
- * Tumblr boilerplate - clean starter theme 
+ * Tumblr boilerplate - clean starter theme
  * made by Hugo Vieilledent
  * 2014-01-03
  **********************
  */
- 
+
 /**
  * Base
  */
- 
+
 * { box-sizing: border-box; -moz-box-sizing: border-box; }
 html { line-height: 1.5; font-size: 16px; font-family: Helvetica, sans-serif; color: #000; font-family: 'Open Sans', sans-serif; font-weight: 300;}
 body { padding: 0; margin: 0; }
@@ -51,26 +51,23 @@ address { font-style: normal; }
 /**
  * your style
  */
- 
+
 
 
 </style>
 	</head>
 	<body>
-	
-	
-	<body>
-	
+
 		<header class="SiteHeader">
 			<h1>{Title}</h1>
-			
+
 			<div>
 				{block:Description}
 					<p id="description">{Description}</p>
 				{/block:Description}
 			</div>
 		</header>
-		
+
 
 		<main class="SiteContent">
 			{block:Posts}
@@ -84,7 +81,7 @@ address { font-style: normal; }
 						</div>
 					</article>
 				{/block:Text}
-				
+
 				{block:Photo}
 					<article class="Article Article--photo">
 						<div class="Media">
@@ -96,7 +93,7 @@ address { font-style: normal; }
 						{/block:Caption}
 					</article>
 				{/block:Photo}
-				
+
 				{block:Panorama}
 					<article class="Article Article--panorama">
 						{LinkOpenTag}
@@ -104,25 +101,25 @@ address { font-style: normal; }
 								<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
 							</div>
 						{LinkCloseTag}
-						
+
 						{block:Caption}
 							<div class="Caption">{Caption}</div>
 						{/block:Caption}
 					</article>
 				{/block:Panorama}
-				
+
 				{block:Photoset}
 					<article class="Article Article--photoset">
 						<div class="Media">
 							{Photoset-500}
 						</div>
-						
+
 						{block:Caption}
 							<div class="Caption">{Caption}</div>
 						{/block:Caption}
 					</article>
 				{/block:Photoset}
-				
+
 				{block:Quote}
 					<article class="Article Article--quote">
 						<blockquote>
@@ -138,7 +135,7 @@ address { font-style: normal; }
 						</blockquote>
 					</article>
 				{/block:Quote}
-				
+
 				{block:Link}
 					<article class="Article Article--link">
 						<div class="Link">
@@ -150,7 +147,7 @@ address { font-style: normal; }
 						{/block:Description}
 					</article>
 				{/block:Link}
-				
+
 				{block:Chat}
 					<article class="Article Article--chat">
 						{block:Title}
@@ -168,46 +165,46 @@ address { font-style: normal; }
 						</div>
 					</article>
 				{/block:Chat}
-				
+
 				{block:Video}
 					<article class="Article Article--video">
 						<div class="Media">
 							{Video-500}
 						</div>
-						
+
 						{block:Caption}
 							<div class="Caption">{Caption}</div>
 						{/block:Caption}
 					</article>
 				{/block:Video}
-				
+
 				{block:Audio}
 					<article class="Article Article--audio">
 						<div class="Media">
 							{AudioPlayerBlack}
 						</div>
-						
+
 						{block:Caption}
 							<div class="Caption">{Caption}</div>
 						{/block:Caption}
 					</article>
 				{/block:Audio}
-				
+
 			{/block:Posts}
 		</main>
 
-		
+
 		<footer id="SiteFooter" class="SiteFooter">
 			<div class="Pagination">
 				{block:PreviousPage}
 					<a href="{PreviousPage}">&#171; Previous</a>
 				{/block:PreviousPage}
-				
+
 				{block:NextPage}
 					<a href="{NextPage}">Next &#187;</a>
 				{/block:NextPage}
 			</div>
 		</footer>
-		
+
 	</body>
 </html>
