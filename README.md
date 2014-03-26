@@ -3,6 +3,16 @@ tumblr-boilerplate
 
 tumblr boilerplate - clean starter theme
 
+# Features
+
++ contemporary HTML5 markup
++ javascript / jquery prototype setup
++ masonry.js + infite scrolling setup
++ basic tumblr variables
++ google analytics setep
++ disqus setup
++ normalize.css
+
 # Files
 
 + index.html 

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]><html class="lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 	<head>
 		<title>{Title}</title>
 		<link rel="shortcut icon" href="{Favicon}">
@@ -14,17 +16,28 @@
 		<meta http-equiv="X-UA-Compatible" content='IE=edge' />
 		<meta name="viewport" content="width=device-width" />
 
-		<link rel="stylesheet" href="link_to_your_style.css" />
-		<link rel="stylesheet" href="link_to_normalize_asset" />
+		<meta name="color:Background" content="#fff" />
+		<meta name="color:Text" content="#000" />
+		<meta name="text:Google analytics ID" content="">
+		<meta name="if:Show tags" content="1">
+		<meta name='text:Disqus Shortname' content='' />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+		<link href='http://static.tumblr.com/qdi9m50/CQsn31olu/normalize.css' type='text/css'>
 
 
 <style>
 
 /*
  **********************
- * Tumblr boilerplate - clean starter theme
- * made by Hugo Vieilledent
- * 2014-01-03
+ * Tumblr Starter Theme (boilerplate)
+ * update: 2014-03-26
+ * https://github.com/hugovieilledent/tumblr-boilerplate
  **********************
  */
 
@@ -33,15 +46,20 @@
  */
 
 * { box-sizing: border-box; -moz-box-sizing: border-box; }
-html { line-height: 1.5; font-size: 16px; font-family: Helvetica, sans-serif; color: #000; font-family: 'Open Sans', sans-serif; font-weight: 300;}
-body { margin: 0; }
-h1, h2, h3, h4 { line-height: 1.1; }
+html { line-height: 1.5; font-size: 16px; font-family: Helvetica, sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300;}
+body { 
+	margin: 0;
+	color: {color:Text};
+	background-color: {color:Background};
+}
+h1, h2, h3, h4 { line-height: 1.1; font-size: 1.3rem;
+font-weight: 300; }
 h1 { font-size: 2.25rem; margin-bottom: 0.138888889em; }
 h2 { font-size: 1.375rem; margin-bottom: 0.318181818em; }
 h3 { font-size: 1rem; }
 h4 { font-size: 0.8125rem; }
-a { text-decoration: none; color: black; }
-a:hover { text-decoration: underline; }
+a { text-decoration: none; color: black; border-bottom: 1px solid black;}
+a:hover { text-decoration: none; }
 a:visited { color: black; }
 a:active { color: black; }
 iframe, img { max-width: 100%; }
@@ -56,27 +74,38 @@ fieldset { border: 0; padding: 0; }
 blockquote { font-style: italic; }
 address { font-style: normal; }
 
+
 /**
- * your style here
+ * Custom css for tumblr user
  */
 
+{CustomCSS}
 
 </style>
 	</head>
 
 
-	<body>
+	<body class="{block:IndexPage}is-grid{/block:IndexPage}">
 
 		<header id="SiteHeader" class="SiteHeader">
-			<h1 class="SiteTitle">{Title}</h1>
+
+			<h1 class="SiteTitle"><a href="/">{Title}</a></h1>
 
 			<div class="SiteDescription">
 				{block:Description}
 					{Description}
 				{/block:Description}
 			</div>
-		</header>
 
+			{block:HasPages}
+				<nav class="SiteNavigation">
+					{block:Pages}
+					<a href="{URL}">{Label}</a>
+					{/block:Pages}
+				</nav>
+			{/block:HasPages}
+
+		</header>
 
 		<main id="SiteContent" class="SiteContent">
 			{block:Posts}
@@ -94,13 +123,15 @@ address { font-style: normal; }
 					{block:Photo}
 						<figure class="Media">
 							<div class="Image">
-								<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+								<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
 							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
+							{block:PermalinkPage}
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							{/block:PermalinkPage}
 						</figure>
 					{/block:Photo}
 
@@ -110,11 +141,13 @@ address { font-style: normal; }
 								<div class="Image Image--Panorama">
 									<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
 								</div>
-								{block:Caption}
-									<figcaption class="Caption">
-										{Caption}
-									</figcaption>
-								{/block:Caption}
+								{block:PermalinkPage}
+									{block:Caption}
+										<figcaption class="Caption">
+											{Caption}
+										</figcaption>
+									{/block:Caption}
+								{/block:PermalinkPage}
 							</figure>
 						{LinkCloseTag}
 					{/block:Panorama}
@@ -124,11 +157,13 @@ address { font-style: normal; }
 							<div class="Photoset">
 								{Photoset-700}
 							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
+							{block:PermalinkPage}
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							{/block:PermalinkPage}
 						</figure>
 					{/block:Photoset}
 
@@ -144,7 +179,7 @@ address { font-style: normal; }
 
 					{block:Link}
 						<header class="Link">
-							<h1><a href="{URL}" {Target}>{Name}</a></h1>
+							<h1 class="Title"><a href="{URL}" {Target}>{Name}</a></h1>
 						</header>
 
 						{block:Description}
@@ -175,19 +210,29 @@ address { font-style: normal; }
 							<div class="Video">
 								{Video-500}
 							</div>
-							{block:Caption}
-								<figcaption class="Caption">
-									{Caption}
-								</figcaption>
-							{/block:Caption}
+							{block:PermalinkPage}
+								{block:Caption}
+									<figcaption class="Caption">
+										{Caption}
+									</figcaption>
+								{/block:Caption}
+							{/block:PermalinkPage}
 						</figure>
 					{/block:Video}
 
 					{block:Audio}
 						<figure class="Media">
+							
+							<div class="Image">
+								{block:AlbumArt}
+									<img src="{AlbumArtURL}" alt="">
+								{/block:AlbumArt}
+							</div>
+
 							<div class="Audio">
 								{AudioPlayerBlack}
 							</div>
+							
 							{block:Caption}
 								<figcaption class="Caption">
 									{Caption}
@@ -195,41 +240,181 @@ address { font-style: normal; }
 							{/block:Caption}
 						</figure>
 					{/block:Audio}
+					
+					
+					{block:PermalinkPage}
+					
+							{block:IfNotShowFooter}{/block:IfNotShowFooter}
+							{block:IfShowFooter}
+							<footer class="Article-Footer">
+		
+								{block:IfNotShowTags}
+								{/block:IfNotShowTags}
+								
+								{block:IfShowTags}
+									{block:HasTags}
+										<div class="Tags">
+											{block:Tags}
+												<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}"> {Tag} </a>
+											{/block:Tags}
+										</div>
+									{/block:HasTags}
+								{/block:IfShowTags}
+		
+								<time class="Time"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
+		
+								<div class="Social">
+									<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
+									<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
+									<span class="Reblog">{ReblogButton color="Black"}</span>
+									<span class="Like">{LikeButton color="Black"}</span>
+								</div>
+							</footer>
+							{/block:IfShowFooter}
 
-					<footer class="Article-Footer">
-						{block:HasTags}
-							<div class="Tags">
-								{block:Tags}
-									<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}"> {Tag} </a>
-								{/block:Tags}
-							</div>
-						{/block:HasTags}
+							{block:IfDisqusShortname}
+								<div class="Comments">
+									<div id="disqus_thread"></div>
+									<script type="text/javascript">
+										/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+										var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+									
+										/* * * DON'T EDIT BELOW THIS LINE * * */
+										(function() {
+											var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+											dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+											(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+										})();
+									</script>
+									<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+									<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+								</div>
+							{/block:IfDisqusShortname}
+						{/block:IfShowComments}
+					{/block:PermalinkPage}
 
-						<time class="Time"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
-
-						<div class="Social">
-							<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
-							<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
-							<span class="Reblog">{ReblogButton color="Black"}</span>
-							<span class="Like">{LikeButton color="Black"}</span>
-						</div>
-					</footer>
 				</article>
 			{/block:Posts}
 		</main>
 
 
 		<footer id="SiteFooter" class="SiteFooter">
-			<div class="Pagination">
+		{block:IndexPage}
+			<div id ="Pagination" class="Pagination">
 				{block:PreviousPage}
-					<a href="{PreviousPage}">&#171; Previous</a>
+					<a id="Pagination-previous" class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
 				{/block:PreviousPage}
 
 				{block:NextPage}
-					<a href="{NextPage}">Next &#187;</a>
+					<a id="Pagination-next" class="Pagination-next" href="{NextPage}">Next &#187;</a>
 				{/block:NextPage}
 			</div>
+		{/block:IndexPage}
+			
+			
+			{block:PermalinkPage}
+				{block:PermalinkPagination}
+				<div id="SinglePagination" class="SinglePagination">
+					{block:PreviousPost}
+					<a class="Pagination Pagination-next" href="{PreviousPost}">Next</a>  
+					{/block:PreviousPost}
+					{block:NextPost}
+						<a class="Pagination Pagination-previous" href="{NextPost}">Previous</a>  
+					{/block:NextPost}
+				</div>
+				{/block:PermalinkPagination}
+			{/block:PermalinkPage}
+			
 		</footer>
+	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://static.tumblr.com/qdi9m50/E00mzqyrr/jquery.infinitescroll.min.js"></script>
+	<script src="http://static.tumblr.com/qdi9m50/Jc8n0ith2/imagesloaded.pkgd.min.js"></script>
+	<script src="http://static.tumblr.com/qdi9m50/XbBn0g0nw/masonry.pkgd.min.js"></script>
 
-	</body>
+	<script>
+		var TumblrStarterTheme = function() {
+			tumblrStarterTheme.init();
+		};
+		
+		// this creates TumblrStarterTheme prototype
+		TumblrStarterTheme.prototype = {
+		
+			// gloabl variables
+			$siteMain: null,
+			$siteBody: $('body'),
+		
+			init: function() {
+				// console.log('init - running');
+				
+				// on dom ready save the var
+				var self = this;
+				this.$siteMain = $('#SiteContent'); 
+				
+				// run imgLoaded and Masonry if grid has class 'is-grid'
+				if (this.$siteBody.hasClass('is-grid')) {
+					this.$siteMain.imagesLoaded().done( function( instance ) {
+						console.log("images loaded - running");
+						self.masonry();
+					});   
+				}
+
+				this.infiniteScrolling();
+			},
+		
+			masonry: function() {
+				// console.log('masonry - running');
+				this.$siteMain
+					.prepend('<div class="Masonry-gridSizer"></div><div class="Masonry-gutterSizer"></div>')
+					.masonry({
+						columnWidth: '.Masonry-gridSizer',
+						gutter: '.Masonry-gutterSizer',
+						itemSelector: '.Article',
+						transitionDuration: '100ms',
+						bufferPx: 300, // trigger 'next' earlier
+					}).addClass('is-active');
+			},
+
+			infiniteScrolling: function() {
+				// console.log('infinite scrolling - running');
+				
+				var self = this;
+		
+				this.$siteMain.infinitescroll({
+					navSelector  : "#Pagination", // selector for the paged navigation (it will be hidden)
+					nextSelector : "#Pagination-next", // selector for the NEXT link (to page 2)
+					itemSelector : ".Article", // selector for all items you'll retrieve
+					debug : false, // enable debug messaging ( to console.log )
+					loadingText : "", // text accompanying loading image
+					img: "null"
+				}, function( newElements ) {
+					// callback to include new masonry items
+					if (self.$siteBody.hasClass('is-grid')) {
+						// call imagesLoaded first
+						var $newElems = $( newElements ).addClass('is-hidden');
+						self.$siteMain.imagesLoaded().done( function( instance ) {
+							// console.log('masonry callback - running');
+
+							$newElems.removeClass('is-hidden');
+							// trigger Masonry
+							self.$siteMain.masonry( 'appended', $newElems );
+						});   
+					}
+				});
+			}
+		};
+		
+		// this runs the code and crete a TumblrStarterTheme app and launches TumblrStarterTheme.init
+		$(document).ready(function() {
+			var tumblrStarterTheme = new TumblrStarterTheme();
+		});
+
+	</script>
+
+	{block:IfGoogleAnalyticsID}
+		<script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{var pageTracker=_gat._getTracker("{text:Google Analytics ID}");pageTracker._trackPageview()}catch(err){}</script>
+	{block:IfGoogleAnalyticsID}
+
+</body>
 </html>
