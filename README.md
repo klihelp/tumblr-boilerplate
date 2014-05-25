@@ -9,25 +9,25 @@ tumblr boilerplate - clean starter theme
 + javascript / jquery prototype setup
 + masonry.js + infite scrolling setup
 + basic tumblr variables
-+ google analytics setep
++ google analytics setup
 + disqus setup
-+ normalize.css
++ [normalize.css](https://necolas.github.io/normalize.css/)
 
 # Files
 
 + index.html 
-+ normalize.css, you should check if it is the last version (git.io/normalize). Upload it in your tumblr assets 
++ normalize.css
 
 # Procedure
 
 + copy paste the content from index.html to your tumblr blog by going on the customize page and replacing the whole content
-+ upload normalize.css to your assets
-+ add your own css, inside the `<style>` tags or by using the `<link rel="stylesheet" href="link_to_normalize_asset">` and replacing the value of `href` by the url to the `style.css` file you uploaded to the assets
++ upload [normalize.css](https://necolas.github.io/normalize.css/) to your assets
++ add your own css, inside the `<style>` tags or by using the `<link rel="stylesheet" href="link_to_normalize_asset">` and replacing the value of `href` by the url to the `style.css` file you uploaded to the assets.
 + save
 
 # Browser support
 
-ie > internet explorer 8, some html5 semantic markup used here is not supported
+internet explorer > 8, some html5 semantic markup used here is not supported
 
 # todo
 
