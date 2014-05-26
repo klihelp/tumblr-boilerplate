@@ -22,9 +22,8 @@ tumblr boilerplate - clean starter theme
 
 # Get started
 
-+ copy paste the content from index.html to your tumblr blog by going on the customize page and replacing the whole content
-+ upload [normalize.css](https://necolas.github.io/normalize.css/) to your assets
-+ add your own css, inside the `<style>` tags or by using the `<link rel="stylesheet" href="link_to_normalize_asset">` and replacing the value of `href` by the url to the `style.css` file you uploaded to the assets.
++ copy paste the content from `index.html [Customize page](http://www.tumblr.com/customize) of your blog and replacing the whole content
++ (optional) upload [normalize.css](https://necolas.github.io/normalize.css/) to your [assets](http://www.tumblr.com/customize) `Customize page > Edit Html > Settings > Theme assets`
 + save
 
 
