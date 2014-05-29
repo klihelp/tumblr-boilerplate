@@ -17,7 +17,6 @@ A clean starter theme.
 # Files
 
 + Index.html
-+ Normalize.css
 
 # Getting started
 
@@ -25,10 +24,7 @@ To use the theme you will have to customize any (free) theme. Go to the [Customi
 
 Copy the raw content of [`index.html`](https://raw.githubusercontent.com/hugovieilledent/tumblr-boilerplate/master/index.html) and paste it in, replacing everything.
 
-That's it! You now have a beautiful, functional base to build whatever you want.
-
-+ (optional) upload [normalize.css](https://necolas.github.io/normalize.css/) to your [assets](http://www.tumblr.com/customize) `Customize page > Edit Html > Settings > Theme assets`
-+ save
+Save it and that's it! You now have a beautiful, functional base to build whatever you want.
 
 # Theme Options: customisation for the final user
 
