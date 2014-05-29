@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="lt-ie9"> <![endif]-->
-<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<!doctype html>
+<!--[if IE 8]><html class="lt-ie9"><![endif]-->
+<!--[if IE 9]><html class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html><!--<![endif]-->
 	<head>
 		<title>{Title}</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content='IE=edge' />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="shortcut icon" href="{Favicon}">
-		<link rel="alternate" type="application/rss+xml" href="{RSS}">
-
+		<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 
 		{block:Description}
 			<meta name="description" content="{MetaDescription}" />
 		{/block:Description}
-
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content='IE=edge' />
-		<meta name="viewport" content="width=device-width" />
 
 		<meta name="color:Background" content="#fff" />
 		<meta name="color:Text" content="#000" />
@@ -23,11 +22,8 @@
 		<meta name="if:Show tags" content="1">
 		<meta name='text:Disqus Shortname' content='' />
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link href='http://static.tumblr.com/qdi9m50/CQsn31olu/normalize.css' type='text/css'>
-
 
 <style>
 
@@ -45,7 +41,7 @@
 
 * { box-sizing: border-box; -moz-box-sizing: border-box; }
 html { line-height: 1.5; font-size: 16px; font-family: Helvetica, sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300;}
-body { 
+body {
 	margin: 0;
 	color: {color:Text};
 	background-color: {color:Background};
@@ -81,8 +77,6 @@ address { font-style: normal; }
 
 </style>
 	</head>
-
-
 	<body class="">
 
 		<header id="SiteHeader" class="SiteHeader">
@@ -220,7 +214,7 @@ address { font-style: normal; }
 
 					{block:Audio}
 						<figure class="Media">
-							
+
 							<div class="Image">
 								{block:AlbumArt}
 									<img src="{AlbumArtURL}" alt="">
@@ -230,7 +224,7 @@ address { font-style: normal; }
 							<div class="Audio">
 								{AudioPlayerBlack}
 							</div>
-							
+
 							{block:Caption}
 								<figcaption class="Caption">
 									{Caption}
@@ -238,17 +232,17 @@ address { font-style: normal; }
 							{/block:Caption}
 						</figure>
 					{/block:Audio}
-					
-					
+
+
 					{block:PermalinkPage}
-					
+
 							{block:IfNotShowFooter}{/block:IfNotShowFooter}
 							{block:IfShowFooter}
 							<footer class="Article-Footer">
-		
+
 								{block:IfNotShowTags}
 								{/block:IfNotShowTags}
-								
+
 								{block:IfShowTags}
 									{block:HasTags}
 										<div class="Tags">
@@ -258,9 +252,9 @@ address { font-style: normal; }
 										</div>
 									{/block:HasTags}
 								{/block:IfShowTags}
-		
+
 								<time class="Time"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
-		
+
 								<div class="Social">
 									<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
 									<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
@@ -276,7 +270,7 @@ address { font-style: normal; }
 									<script type="text/javascript">
 										/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 										var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
-									
+
 										/* * * DON'T EDIT BELOW THIS LINE * * */
 										(function() {
 											var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -307,24 +301,24 @@ address { font-style: normal; }
 				{/block:NextPage}
 			</div>
 		{/block:IndexPage}
-			
-			
+
+
 			{block:PermalinkPage}
 				{block:PermalinkPagination}
 				<div id="SinglePagination" class="SinglePagination">
 					{block:PreviousPost}
-					<a class="Pagination Pagination-next" href="{PreviousPost}">Next</a>  
+					<a class="Pagination Pagination-next" href="{PreviousPost}">Next</a>
 					{/block:PreviousPost}
 					{block:NextPost}
-						<a class="Pagination Pagination-previous" href="{NextPost}">Previous</a>  
+						<a class="Pagination Pagination-previous" href="{NextPost}">Previous</a>
 					{/block:NextPost}
 				</div>
 				{/block:PermalinkPagination}
 			{/block:PermalinkPage}
-			
+
 		</footer>
-	
-	
+
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://static.tumblr.com/qdi9m50/E00mzqyrr/jquery.infinitescroll.min.js"></script>
 	<script src="http://static.tumblr.com/qdi9m50/Jc8n0ith2/imagesloaded.pkgd.min.js"></script>
@@ -334,32 +328,32 @@ address { font-style: normal; }
 		var TumblrStarterTheme = function() {
 			tumblrStarterTheme.init();
 		};
-		
+
 		// this creates TumblrStarterTheme prototype
 		TumblrStarterTheme.prototype = {
-		
+
 			// gloabl variables
 			$siteMain: null,
 			$siteBody: $('body'),
-		
+
 			init: function() {
 				// console.log('init - running');
-				
+
 				// on dom ready save the var
 				var self = this;
-				this.$siteMain = $('#SiteContent'); 
-				
+				this.$siteMain = $('#SiteContent');
+
 				// run imgLoaded and Masonry if grid has class 'is-grid'
 				if (this.$siteBody.hasClass('is-grid')) {
 					this.$siteMain.imagesLoaded().done( function( instance ) {
 						console.log("images loaded - running");
 						self.masonry();
-					});   
+					});
 				}
 
 				this.infiniteScrolling();
 			},
-		
+
 			masonry: function() {
 				// console.log('masonry - running');
 				this.$siteMain
@@ -375,9 +369,9 @@ address { font-style: normal; }
 
 			infiniteScrolling: function() {
 				// console.log('infinite scrolling - running');
-				
+
 				var self = this;
-		
+
 				this.$siteMain.infinitescroll({
 					navSelector  : "#Pagination", // selector for the paged navigation (it will be hidden)
 					nextSelector : "#Pagination-next", // selector for the NEXT link (to page 2)
@@ -396,12 +390,12 @@ address { font-style: normal; }
 							$newElems.removeClass('is-hidden');
 							// trigger Masonry
 							self.$siteMain.masonry( 'appended', $newElems );
-						});   
+						});
 					}
 				});
 			}
 		};
-		
+
 		// this runs the code and crete a TumblrStarterTheme app and launches TumblrStarterTheme.init
 		$(document).ready(function() {
 			var tumblrStarterTheme = new TumblrStarterTheme();
