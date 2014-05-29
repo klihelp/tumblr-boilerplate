@@ -39,35 +39,38 @@
  * Base
  */
 
-* { box-sizing: border-box; -moz-box-sizing: border-box; }
-html { line-height: 1.5; font-size: 16px; font-family: Helvetica, sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300;}
-body {
-	margin: 0;
-	color: {color:Text};
-	background-color: {color:Background};
-}
-h1, h2, h3, h4 { line-height: 1.1; font-size: 1.3rem;
-font-weight: 300; }
-h1 { font-size: 2.25rem; margin-bottom: 0.138888889em; }
-h2 { font-size: 1.375rem; margin-bottom: 0.318181818em; }
+*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
+html { line-height: 1.5; font-size: 16px; font-family: sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300; }
+body { margin: 2rem; color: {color:Text}; background-color: {color:Background}; }
+ol, ul, dl, dd, h1, h2, h3, h4, h5, h6, p, pre, figure, fieldset, input, textarea { margin: 0 0 1rem; }
+h1, h2, h3, h4 { line-height: 1.1; }
+h1 { font-size: 2rem;  }
+h2 { font-size: 1.375rem; }
 h3 { font-size: 1rem; }
-h4 { font-size: 0.8125rem; }
-a { text-decoration: none; color: black; border-bottom: 1px solid black;}
-a:hover { text-decoration: none; }
-a:visited { color: black; }
-a:active { color: black; }
+h4 { font-size: 0.875rem; }
+
+a,
+a:visited { text-decoration: underline; color: #009; }
+a:hover,
+a:focus { text-decoration: underline; color: black; outline: 0;}
+
 iframe, img { max-width: 100%; }
 img { vertical-align: bottom; }
-a img { border: 0; }
-figure { margin: 0; }
 small { font-size: 80%;}
-.align-center { text-align: center; }
 blockquote,
-ol, ul, dl, dd, h1, h2, h3, h4, h5, h6, p, pre, fieldset, input, textarea { margin: 0 0 1em; }
 fieldset { border: 0; padding: 0; }
 blockquote { font-style: italic; }
 address { font-style: normal; }
+.align-center { text-align: center; }
 
+.Article {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 1rem;
+	margin-bottom: 2rem;
+}
+.Title a {
+	text-decoration: none;
+}
 
 /**
  * Custom css for tumblr user
@@ -399,7 +402,6 @@ address { font-style: normal; }
 		$(document).ready(function() {
 			var tumblrStarterTheme = new TumblrStarterTheme();
 		});
-
 	</script>
 
 	{block:IfGoogleAnalyticsID}
