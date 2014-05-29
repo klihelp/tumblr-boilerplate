@@ -22,7 +22,7 @@ A clean starter theme.
 
 To use the theme you will have to customize any (free) theme. Go to the [Customize page](http://www.tumblr.com/customize), choose any (free) theme and use it. There will be an 'Edit HTML' link beneath the title.
 
-Copy the raw content of [`index.html`](https://raw.githubusercontent.com/hugovieilledent/tumblr-boilerplate/master/index.html) and paste it in, replacing everything.
+You have to replace all the HTML with the raw content of [`index.html`](https://raw.githubusercontent.com/hugovieilledent/tumblr-boilerplate/master/index.html).
 
 Save it and that's it! You now have a beautiful, functional base to build whatever you want.
 
