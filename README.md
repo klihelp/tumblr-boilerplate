@@ -1,36 +1,34 @@
 tumblr-boilerplate
 ==================
 
-tumblr boilerplate - clean starter theme
+A clean starter theme.
 
 # Features
 
-+ contemporary HTML5 markup
-+ javascript / jquery prototype setup
-+ masonry.js + infite scrolling setup
-+ basic tumblr variables
-+ google analytics setup
-+ disqus setup
-+ [normalize.css](https://necolas.github.io/normalize.css/)
-
++ Contemporary HTML5 markup
++ Basic tumblr variables
++ [Normalize.css](https://necolas.github.io/normalize.css/)
++ Infinite scrolling
++ Masonry.js layout
++ Easy Google Analytics
++ Support for comments with Disqus
++ JavaScript / jQuery prototype setup
 
 # Files
 
-+ index.html 
-+ normalize.css
++ Index.html
 
+# Getting started
 
-# Get started
+To use the theme you will have to customize any (free) theme. Go to the [Customize page](http://www.tumblr.com/customize), choose any (free) theme and use it. There will be an 'Edit HTML' link beneath the title.
 
-+ copy paste the content from `index.html [Customize page](http://www.tumblr.com/customize) of your blog and replacing the whole content
-+ (optional) upload [normalize.css](https://necolas.github.io/normalize.css/) to your [assets](http://www.tumblr.com/customize) `Customize page > Edit Html > Settings > Theme assets`
-+ save
+You have to replace all the HTML with the raw content of [`index.html`](https://raw.githubusercontent.com/hugovieilledent/tumblr-boilerplate/master/index.html).
 
+Save it and that's it! You now have a beautiful, functional base to build whatever you want.
 
-# Theme Options: customisation for the final user 
+# Theme Options: customisation for the final user
 
-By including special meta tags in your theme, users can easily tweak some features using the [Customize page](http://www.tumblr.com/customize). It can be colors, custom texts, fonts etc.
-If you want to know more about Tumblr "Theme Options" you should read their [documentation](http://www.tumblr.com/docs/en/custom_themes#theme-options)
+By including special meta tags in your theme, users can easily tweak features as colors, custom texts, fonts etc. on the [customize page](http://www.tumblr.com/customize). If you want to know more, please see the [Tumblr theme options](http://www.tumblr.com/docs/en/custom_themes#theme-options).
 
 ## Customize colors
 
@@ -42,37 +40,26 @@ If you want to know more about Tumblr "Theme Options" you should read their [doc
 + Show and hide the footer
 + Show and hide the social sharing features: Tumblr (like and reblog), Facebook, Twitter
 
-
-# Built-in pluggins and services
-
-Infite scrolling and Masonry are the two build-in pluggins of this starter theme. They work well together, Infinte scrolling is activated by default, Masonry is not. You can choose to desactivate one of them or both.
-
-Google Analytics and Discus are the two build-in services of this starter theme.
-
 ## Infinite scrolling
 
-Infinite scrolling is activated by default.
-If you want to desactivate it, find the javascript at the bottom of the page and comment out the 'this.infiniteScrolling();' line in the `init` method.
+Infinite scrolling is activated by default. To deactivate it you have to change one line in the JavaScript found at the bottom of `index.html`. Comment out the 'this.infiniteScrolling();' line in the `init` method.
 
 ## Masonry
 
-Masonry is desactivated by default.
-In order to activate masonry you have to add the class `is-grid` to the `body`.
-If you want Masonry to be activated only on the index page you should add this code as class to the body `{block:IndexPage}is-grid{/block:IndexPage}`
+To activate Masonry you only have to add the class `is-grid` to the `body` element. To only have masonry on the index page, you should add this code as class to the body `{block:IndexPage}is-grid{/block:IndexPage}`
 
 ## Google Analytics
 
-Go the [Customize page](http://www.tumblr.com/customize) of your blog and fill in your website's `Google analytics ID`
+Go the [customize page](http://www.tumblr.com/customize) of your blog and fill in your website's `Google analytics ID`.
 
-## Discus
-Go the [Customize page](http://www.tumblr.com/customize) of your blog and fill in your [Disqus Shortname](https://disqus.com/admin/signup/?utm_source=New-Site)
+## Disqus
 
+Go the [customize page](http://www.tumblr.com/customize) of your blog and fill in your [Disqus Shortname](https://disqus.com/admin/signup/?utm_source=New-Site).
 
 # Browser support
 
-+ All browsers
-+ Internet Explorer > 8, some html5 semantic markup used here is not supported
++ Internet Explorer > 8 (doesn't support HTML5 elements, among other things)
 
-# todo
+# To-do
 
-+ microformats
++ Microformats
