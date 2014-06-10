@@ -62,4 +62,5 @@ Go the [customize page](http://www.tumblr.com/customize) of your blog and fill i
 
 # To-do
 
++ [https://schema.or](https://schema.or)
 + Microformats
