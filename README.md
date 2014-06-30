@@ -8,11 +8,12 @@ A clean starter theme.
 + Contemporary HTML5 markup
 + Basic tumblr variables
 + [Normalize.css](https://necolas.github.io/normalize.css/)
-+ Infinite scrolling
-+ Masonry.js layout
-+ Easy Google Analytics
++ Infinite scrolling (optional)
++ Easy Google Analytics (optional)
++ Masonry.js easy setup (optional)
 + Support for comments with Disqus
 + JavaScript / jQuery prototype setup
++ [Naming convention from Suit CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)
 
 # Files
 
@@ -59,6 +60,7 @@ Go the [customize page](http://www.tumblr.com/customize) of your blog and fill i
 # Browser support
 
 + Internet Explorer > 8 (doesn't support HTML5 elements, among other things)
++ All the rest
 
 # To-do
 
