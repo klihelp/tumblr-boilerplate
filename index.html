@@ -275,11 +275,12 @@ address { font-style: normal; }
 								<time class="Time"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
 
 								{block:IfShowSocial}
-									<div class="Social">
-										<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
-										<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
-										<span class="Reblog">{ReblogButton color="Black"}</span>
-										<span class="Like">{LikeButton color="Black"}</span>
+									<div class="Socials">
+										<span class="Social Social--facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
+										<span class="Social Social--twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
+										<span class="Social Social--reblog">{ReblogButton color="Black"}</span>
+										<span class="Social Social--like">{LikeButton color="Black"}</span>
+										<span class="Social Social--url"><a href="{ShortURL}">Post URL</a></span>
 									</div>
 								{/block:IfShowSocial}
 							</footer>
