@@ -122,7 +122,7 @@ address { font-style: normal; }
 
 		<main id="SiteContent" class="SiteContent">
 			{block:Posts}
-				<article class="Article {TagsAsClasses} {block:Text}Article--text {/block:Text}{block:Photoset}Article--photoset {/block:Photoset}{block:Photo}Article--photo {/block:Photo}{block:RebloggedFrom}Article--reblogged {/block:RebloggedFrom}{block:Quote}Article--quote {/block:Quote}{block:Link}Article--link {/block:Link}{block:Chat}Article--chat {/block:Chat}{block:Audio}Article--audio {/block:Audio}{block:Video}Article--video {/block:Video}{block:Answer}Article--answer {/block:Answer}">
+				<article class="Article Article--{PostType} {TagsAsClasses}">
 					{block:Text}
 						<header class="Header">
 							{block:Title}
