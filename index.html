@@ -20,6 +20,7 @@
 		<meta name="text:Google analytics ID" content="">
 		<meta name="if:Show Footer" content="1">
 		<meta name="if:Show tags" content="1">
+		<meta name="if:Show social" content="0">
 		<meta name='text:Disqus Shortname' content='' />
 
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -120,20 +121,18 @@ address { font-style: normal; }
 							<div class="Image">
 								<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
 							</div>
-							{block:PermalinkPage}
-								{block:Caption}
-									<figcaption class="Caption">
-										{Caption}
-									</figcaption>
-								{/block:Caption}
-							{/block:PermalinkPage}
+							{block:Caption}
+								<figcaption class="Caption">
+									{Caption}
+								</figcaption>
+							{/block:Caption}
 						</figure>
 					{/block:Photo}
 
 					{block:Panorama}
 						{LinkOpenTag}
 							<figure class="Media">
-								<div class="Image Image--Panorama">
+								<div class="Image Image--panorama">
 									<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
 								</div>
 								{block:PermalinkPage}
@@ -258,12 +257,14 @@ address { font-style: normal; }
 
 								<time class="Time"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
 
-								<div class="Social">
-									<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
-									<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
-									<span class="Reblog">{ReblogButton color="Black"}</span>
-									<span class="Like">{LikeButton color="Black"}</span>
-								</div>
+								{block:IfShowSocial}
+									<div class="Social">
+										<span class="Facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
+										<span class="Twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
+										<span class="Reblog">{ReblogButton color="Black"}</span>
+										<span class="Like">{LikeButton color="Black"}</span>
+									</div>
+								{/block:IfShowSocial}
 							</footer>
 							{/block:IfShowFooter}
 
@@ -293,18 +294,17 @@ address { font-style: normal; }
 
 
 		<footer id="SiteFooter" class="SiteFooter">
-		{block:IndexPage}
-			<div id ="Pagination" class="Pagination">
-				{block:PreviousPage}
-					<a id="Pagination-previous" class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
-				{/block:PreviousPage}
+			{block:IndexPage}
+				<div id ="Pagination" class="Pagination">
+					{block:PreviousPage}
+						<a id="Pagination-previous" class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
+					{/block:PreviousPage}
 
-				{block:NextPage}
-					<a id="Pagination-next" class="Pagination-next" href="{NextPage}">Next &#187;</a>
-				{/block:NextPage}
-			</div>
-		{/block:IndexPage}
-
+					{block:NextPage}
+						<a id="Pagination-next" class="Pagination-next" href="{NextPage}">Next &#187;</a>
+					{/block:NextPage}
+				</div>
+			{/block:IndexPage}
 
 			{block:PermalinkPage}
 				{block:PermalinkPagination}
@@ -331,7 +331,6 @@ address { font-style: normal; }
 			this.init();
 		};
 
-		// this creates TumblrStarterTheme prototype
 		TumblrStarterTheme.prototype = {
 
 			// gloabl variables

@@ -27,7 +27,7 @@ You have to replace all the HTML with the raw content of [`index.html`](https://
 
 Save it and that's it! You now have a beautiful, functional base to build whatever you want.
 
-# Theme Options: customisation for the final user
+# Theme Options: customization for the final user
 
 By including special meta tags in your theme, users can easily tweak features as colors, custom texts, fonts etc. on the [customize page](http://www.tumblr.com/customize). If you want to know more, please see the [Tumblr theme options](http://www.tumblr.com/docs/en/custom_themes#theme-options).
 
