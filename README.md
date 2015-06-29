@@ -5,19 +5,22 @@ A clean starter theme.
 
 # Features
 
-+ Contemporary HTML5 markup
++ semantic HTML5 markup
++ [SUIT CSS naming conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)
 + Basic tumblr variables
 + [Normalize.css](https://necolas.github.io/normalize.css/)
-+ Infinite scrolling (optional)
-+ Easy Google Analytics (optional)
-+ Masonry.js easy setup (optional)
-+ Support for comments with Disqus
-+ JavaScript / jQuery prototype setup
-+ [Naming convention from Suit CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)
++ + JavaScript / jQuery prototype setup
+
+# Optional features
+
++ [infinite-scroll](https://github.com/infinite-scroll/infinite-scroll) (optional)
++ [Masonry.js](http://desandro.github.io/masonry/) easy setup (optional)
++ [Disqus](https://disqus.com/admin/tumblr/), for comments (optional)
++ [Google Analytics](http://www.google.com/analytics/) (optional)
 
 # Files
 
-+ Index.html
++ Index.html is all you need
 
 # Getting started
 
