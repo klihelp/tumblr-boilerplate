@@ -18,6 +18,10 @@ A clean starter theme.
 + [Disqus](https://disqus.com/admin/tumblr/), for comments (optional)
 + [Google Analytics](http://www.google.com/analytics/) (optional)
 
+# Ressources
+
++ [Tumblr custom theme documentation](https://www.tumblr.com/docs/en/custom_themes)
+
 # Files
 
 + Index.html is all you need
