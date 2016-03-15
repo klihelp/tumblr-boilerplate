@@ -329,7 +329,7 @@
 								{/block:PreviousPage}
 
 								{block:NextPage}
-									<a id="#PaginationNext" class="Pagination-next" href="{NextPage}">Next &#187;</a>
+									<a id="PaginationNext" class="Pagination-next" href="{NextPage}">Next &#187;</a>
 								{/block:NextPage}
 							</div>
 						{/block:IndexPage}
@@ -337,13 +337,13 @@
 						{block:PermalinkPage}
 							{block:PermalinkPagination}
 							<div class="Pagination Pagination--permalinkPage">
-								{block:PreviousPost}
-									<a class="Pagination-next" href="{PreviousPost}">Next &#187;</a>
-								{/block:PreviousPost}
-
 								{block:NextPost}
 									<a class="Pagination-previous" href="{NextPost}">&#171; Previous</a>
 								{/block:NextPost}
+
+								{block:PreviousPost}
+									<a class="Pagination-next" href="{PreviousPost}">Next &#187;</a>
+								{/block:PreviousPost}
 							</div>
 							{/block:PermalinkPagination}
 						{/block:PermalinkPage}
@@ -403,7 +403,7 @@
 				},
 
 				infiniteScrolling: function() {
-					// console.log('infinite scrolling - running');
+					console.log('infinite scrolling - running');
 
 					var self = this;
 
