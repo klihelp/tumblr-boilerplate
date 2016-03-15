@@ -444,7 +444,8 @@
 							self.$siteMain.imagesLoaded().done( function( instance ) {
 								// console.log('masonry callback - running');
 								// trigger Masonry
-								self.$siteMain.masonry( 'appended', $newElems );
+								console.log('self.$masonryContainer', self.$masonryContainer);
+								self.$masonryContainer.append($newElems).masonry('appended', $newElems);
 								$newElems.removeClass('is-hidden');
 							});
 						}
