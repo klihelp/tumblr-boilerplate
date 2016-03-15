@@ -32,10 +32,10 @@
 
 		<meta name="color:Background" content="#fff" />
 		<meta name="color:Text" content="#000" />
-		<meta name="if:Grid Layout" content="0">
-		<meta name="if:Show Footer" content="1">
+		<meta name="if:Grid Layout" content="1">
+		<meta name="if:Show Article Footer" content="1">
 		<meta name="if:Show tags" content="1">
-		<meta name="if:Show social" content="0">
+		<meta name="if:Show social" content="1">
 		<meta name="text:Google analytics ID" content="">
 		<meta name='text:Disqus Shortname' content='' />
 
@@ -45,42 +45,61 @@
 		<style>
 			{CustomCSS}
 			/**
-				Tumblr Starter Theme (boilerplate)
-				https://github.com/hugovieilledent/tumblr-boilerplate
-			 */
+			Tumblr Starter Theme (boilerplate)
+			https://github.com/hugovieilledent/tumblr-boilerplate
+			*/
 
-			 *, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
-			 html { line-height: 1.5; font-size: 16px; font-family: sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300; }
-			 body { margin: 2rem; color: {color:Text}; background-color: {color:Background}; }
-			 ol, ul, dl, dd, h1, h2, h3, h4, h5, h6, p, pre, figure, fieldset, input, textarea { margin: 0 0 1rem; }
-			 h1, h2, h3, h4 { line-height: 1.1; }
-			 h1 { font-size: 2rem;  }
-			 h2 { font-size: 1.375rem; }
-			 h3 { font-size: 1rem; }
-			 h4 { font-size: 0.875rem; }
+			*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
+			html { line-height: 1.5; font-size: 16px; font-family: sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300; }
+			body { margin: 2rem; color: {color:Text}; background-color: {color:Background}; }
+			ol, ul, dl, dd, h1, h2, h3, h4, h5, h6, p, pre, figure, fieldset, input, textarea { margin: 0 0 1rem; }
+			h1, h2, h3, h4 { line-height: 1.1; }
+			h1 { font-size: 2rem;  }
+			h2 { font-size: 1.375rem; }
+			h3 { font-size: 1rem; }
+			h4 { font-size: 0.875rem; }
 
-			 a,
-			 a:visited { text-decoration: underline; color: #009; }
-			 a:hover,
-			 a:focus { text-decoration: underline; color: black; outline: 0;}
+			a,
+			a:visited { text-decoration: underline; color: #009; }
+			a:hover,
+			a:focus { text-decoration: underline; color: black; outline: 0;}
 
-			 iframe, img { max-width: 100%; }
-			 img { vertical-align: bottom; }
-			 small { font-size: 80%;}
-			 blockquote,
-			 fieldset { border: 0; padding: 0; }
-			 blockquote { font-style: italic; }
-			 address { font-style: normal; }
-			 .align-center { text-align: center; }
+			iframe, img { max-width: 100%; }
+			img { vertical-align: bottom; }
+			small { font-size: 80%;}
+			blockquote,
+			fieldset { border: 0; padding: 0; }
+			blockquote { font-style: italic; }
+			address { font-style: normal; }
+			.align-center { text-align: center; }
 
-			 .Article {
-			 	border-bottom: 1px solid #ccc;
-			 	padding-bottom: 1rem;
-			 	margin-bottom: 2rem;
-			 }
-			 .Title a {
-			 	text-decoration: none;
-			 }
+			.Article {
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 1rem;
+				margin-bottom: 2rem;
+			}
+			.Title a {
+				text-decoration: none;
+			}
+			/**
+				Masonry
+			*/
+			.Articles.Masonry .Article,
+			.Masonry-gridSizer {
+				width: 33%;
+			}
+			.Masonry-gutterSizer { width: 0; }
+			.Articles.Masonry .Article {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+			/* hide until .is-active (added by javascript when)*/
+			.Masonry {
+				opacity: 0;
+			}
+			.Masonry.is-active {
+				opacity: 1;
+			}
 		</style>
 	</head>
 
@@ -245,35 +264,34 @@
 							{/block:Audio}
 
 
-							{block:PermalinkPage}
-								{block:IfNotShowFooter}{/block:IfNotShowFooter}
-								{block:IfShowFooter}
-									<footer class="Article-Footer">
+						{block:IfNotShowFooter}{/block:IfNotShowFooter}
+						{block:IfShowArticleFooter}
+							<footer class="Article-Footer">
 
-										{block:IfShowTags}
-											{block:HasTags}
-												<div class="Tags">
-													{block:Tags}
-														<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
-													{/block:Tags}
-												</div>
-											{/block:HasTags}
-										{/block:IfShowTags}
+								{block:IfShowTags}
+									{block:HasTags}
+										<div class="Tags">
+											{block:Tags}
+												<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
+											{/block:Tags}
+										</div>
+									{/block:HasTags}
+								{/block:IfShowTags}
 
-										<time class="Article-publishedTime"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
+								<time class="Article-publishedTime"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
 
-										{block:IfShowSocial}
-											<div class="Socials">
-												<span class="Social Social--facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
-												<span class="Social Social--twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
-												<span class="Social Social--reblog">{ReblogButton color="Black"}</span>
-												<span class="Social Social--like">{LikeButton color="Black"}</span>
-												<span class="Social Social--url"><a href="{ShortURL}">Post URL</a></span>
-											</div>
-										{/block:IfShowSocial}
-									</footer>
-								{/block:IfShowFooter}
-							{/block:PermalinkPage}
+								{block:IfShowSocial}
+									<div class="Socials">
+										<span class="Social Social--facebook"><a title="Share" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
+										<span class="Social Social--twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
+										<span class="Social Social--reblog">{ReblogButton color="Black"}</span>
+										<span class="Social Social--like">{LikeButton color="Black"}</span>
+										<span class="Social Social--url"><a href="{ShortURL}">Post URL</a></span>
+									</div>
+								{/block:IfShowSocial}
+							</footer>
+						{/block:IfShowArticleFooter}
+
 
 						</article>
 
@@ -303,31 +321,33 @@
 
 			<section class="Section">
 	 			<footer id="SiteFooter" class="SiteFooter">
-					{block:IndexPage}
-						<div class="Pagination Pagination--indexPage">
-							{block:PreviousPage}
-								<a id="Pagination-previous" class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
-							{/block:PreviousPage}
+					<nav id="PaginationContainer">
+						{block:IndexPage}
+							<div class="Pagination Pagination--indexPage">
+								{block:PreviousPage}
+									<a class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
+								{/block:PreviousPage}
 
-							{block:NextPage}
-								<a id="Pagination-next" class="Pagination-next" href="{NextPage}">Next &#187;</a>
-							{/block:NextPage}
-						</div>
-					{/block:IndexPage}
+								{block:NextPage}
+									<a id="#PaginationNext" class="Pagination-next" href="{NextPage}">Next &#187;</a>
+								{/block:NextPage}
+							</div>
+						{/block:IndexPage}
 
-					{block:PermalinkPage}
-						{block:PermalinkPagination}
-						<div class="Pagination Pagination--permalinkPage">
-							{block:PreviousPost}
-								<a class="Pagination-next" href="{PreviousPost}">Next &#187;</a>
-							{/block:PreviousPost}
+						{block:PermalinkPage}
+							{block:PermalinkPagination}
+							<div class="Pagination Pagination--permalinkPage">
+								{block:PreviousPost}
+									<a class="Pagination-next" href="{PreviousPost}">Next &#187;</a>
+								{/block:PreviousPost}
 
-							{block:NextPost}
-								<a class="Pagination-previous" href="{NextPost}">&#171; Previous</a>
-							{/block:NextPost}
-						</div>
-						{/block:PermalinkPagination}
-					{/block:PermalinkPage}
+								{block:NextPost}
+									<a class="Pagination-previous" href="{NextPost}">&#171; Previous</a>
+								{/block:NextPost}
+							</div>
+							{/block:PermalinkPagination}
+						{/block:PermalinkPage}
+					</nav>
 				</footer>
 			</section>
 		</main>
@@ -339,6 +359,7 @@
 		<script src="http://static.tumblr.com/qdi9m50/XbBn0g0nw/masonry.pkgd.min.js"></script>
 
 		<script>
+
 			var TumblrStarterTheme = function() {
 				this.init();
 			};
@@ -350,7 +371,7 @@
 				$masonryContainer: $('.Articles'),
 
 				init: function() {
-					// console.log('init - running');
+					console.log('init - running');
 
 					// on dom ready save the var
 					var self = this;
@@ -387,8 +408,8 @@
 					var self = this;
 
 					this.$siteMain.infinitescroll({
-						navSelector  : "#Pagination", // selector for the paged navigation (it will be hidden)
-						nextSelector : "#Pagination-next", // selector for the NEXT link (to page 2)
+						navSelector  : "#PaginationContainer", // selector for the paged navigation (it will be hidden)
+						nextSelector : "#PaginationNext", // selector for the NEXT link (to page 2)
 						itemSelector : ".Article", // selector for all items you'll retrieve
 						debug : false, // enable debug messaging
 						loadingText : "", // text accompanying loading image
@@ -409,7 +430,7 @@
 				}
 			};
 
-			// this runs the code and create a TumblrStarterTheme app and launches TumblrStarterTheme.init
+			// Create a new instance of TumblrStarterTheme app and launches TumblrStarterTheme.init
 			$(document).ready(function() {
 				var tumblrStarterTheme = new TumblrStarterTheme();
 			});
