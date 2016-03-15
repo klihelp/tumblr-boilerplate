@@ -43,50 +43,58 @@
 		<link href='//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css' type='text/css'>
 
 		<style>
-			{CustomCSS}
 			/**
 			Tumblr Starter Theme (boilerplate)
 			https://github.com/hugovieilledent/tumblr-boilerplate
 			*/
 
+			/**
+				Base
+			 */
 			*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
-			html { line-height: 1.5; font-size: 16px; font-family: sans-serif; color: #000; font-family: 'Lato', 'Helvetica', sans-serif; font-weight: 300; }
-			body { margin: 2rem; color: {color:Text}; background-color: {color:Background}; }
-			ol, ul, dl, dd, h1, h2, h3, h4, h5, h6, p, pre, figure, fieldset, input, textarea { margin: 0 0 1rem; }
-			h1, h2, h3, h4 { line-height: 1.1; }
-			h1 { font-size: 2rem;  }
-			h2 { font-size: 1.375rem; }
-			h3 { font-size: 1rem; }
-			h4 { font-size: 0.875rem; }
+			html {
+				line-height: 1.5;
+				font-size: 16px;
+				font-family: sans-serif;
+				font-family: 'Lato', 'Helvetica', sans-serif;
+				font-weight: 300;
+			}
+			body {
+				margin: 2rem;
+				color: {color:Text};
+				background-color: {color:Background};
+		   }
+			img,
+			iframe {
+				max-width: 100%;
+			}
 
 			a,
-			a:visited { text-decoration: underline; color: #009; }
+			a:visited {
+				text-decoration: underline;
+				color: #009;
+			}
 			a:hover,
-			a:focus { text-decoration: underline; color: black; outline: 0;}
-
-			iframe, img { max-width: 100%; }
-			img { vertical-align: bottom; }
-			small { font-size: 80%;}
-			blockquote,
-			fieldset { border: 0; padding: 0; }
-			blockquote { font-style: italic; }
-			address { font-style: normal; }
-			.align-center { text-align: center; }
-
-			.Article {
-				border-bottom: 1px solid #ccc;
-				padding-bottom: 1rem;
-				margin-bottom: 2rem;
+			a:focus {
+				text-decoration:
+				underline;
+				color: black;
+				outline: 0;
 			}
-			.Title a {
-				text-decoration: none;
-			}
+
+
 			/**
 				Masonry
 			*/
 			.Articles.Masonry .Article,
 			.Masonry-gridSizer {
-				width: 33%;
+				width: 100%;
+			}
+			@media (min-width: 40rem) {
+				.Articles.Masonry .Article,
+				.Masonry-gridSizer {
+					width: 33%;
+				}
 			}
 			.Masonry-gutterSizer { width: 0; }
 			.Articles.Masonry .Article {
@@ -100,6 +108,19 @@
 			.Masonry.is-active {
 				opacity: 1;
 			}
+
+			/**
+				Custom
+			 */
+
+			.Article {
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 1rem;
+				margin-bottom: 4rem;
+			}
+
+			{CustomCSS}
+
 		</style>
 	</head>
 
@@ -348,6 +369,7 @@
 							{/block:PermalinkPagination}
 						{/block:PermalinkPage}
 					</nav>
+					<div>- {Title} -</div>
 				</footer>
 			</section>
 		</main>
