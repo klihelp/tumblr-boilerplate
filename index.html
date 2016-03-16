@@ -60,19 +60,21 @@
 				font-weight: 300;
 			}
 			body {
-				margin: 2rem;
+				margin: 0;
 				color: {color:Text};
-				background-color: {color:Background};
+				background-color: {BackgroundColor};
 		   }
 			img,
 			iframe {
 				max-width: 100%;
 			}
-
+			h1, h2, h3, h4 {
+				margin-top: 0;
+			}
 			a,
 			a:visited {
 				text-decoration: underline;
-				color: #009;
+				color: {AccentColor};
 			}
 			a:hover,
 			a:focus {
@@ -112,7 +114,15 @@
 			/**
 				Custom
 			 */
-
+			.SiteTitle q {
+				font-weight: {TitleFontWeight};
+				font-family: {TitleFont};
+			}
+			.Container {
+			    margin: 0 auto;
+			    padding-left: 1rem;
+			    padding-right: 1rem;
+			}
 			.Article {
 				border-bottom: 1px solid #ccc;
 				padding-bottom: 1rem;
