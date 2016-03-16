@@ -136,32 +136,48 @@
 
 	<body class="Site {block:PermalinkPage}Site--detail{/block:PermalinkPage}">
 
-		<header id="SiteHeader" class="SiteHeader">
+		<header id="SiteHeader Container" class="SiteHeader">
+			{block:ShowHeaderImage}
+				<figure class="HeaderImage">
+					<img src="{HeaderImage}" alt="{Title}">
+				</figure>
+			{/block:ShowHeaderImage}
+
 			<h1 class="SiteTitle"><a href="/">{Title}</a></h1>
 
-			<p class="SiteDescription">
-				{block:Description}
-					{Description}
-				{/block:Description}
-			</p>
+			{block:ShowDescription}
+				<p class="SiteDescription">
+					{block:Description}
+						{Description}
+					{/block:Description}
+				</p>
+			{/block:ShowDescription}
 
 			{block:HasPages}
 				<nav class="Nav Nav--site">
 					{block:Pages}
-						<a href="{URL}">{Label}</a>
+						<a class="Nav-item" href="{URL}">{Label}</a>
 					{/block:Pages}
+
+					{block:SubmissionsEnabled}
+						<a class="Nav-item" href="/submit">{SubmitLabel}</a>
+					{/block:SubmissionsEnabled}
+
+					{block:AskEnabled}
+						<a class="Nav-item" href="/submit">{AskLabel}</a>
+					{/block:AskEnabled}
 				</nav>
 			{/block:HasPages}
 		</header>
 
 		<main id="SiteMain" class="SiteMain">
 			{block:TagPage}
-				<section class="Section">
-					<h1 class="Title">{Tag}</h1>
+				<section class="Section Section--Breadcrumb Container">
+					<h1 class="Breadcrumb">{Tag}</h1>
 				</section>
 			{/block:TagPage}
 
-			<section class="Section">
+			<section class="Section Section--articles Container">
 				<div class="Articles {block:IndexPage}{block:IfGridLayout}Masonry{/block:IfGridLayout}{/block:IndexPage}">
 					{block:Posts}
 						<article class="Article {block:PermalinkPage}Article--detail{/block:PermalinkPage} Article--{PostType} Article--{PostID} {TagsAsClasses}">
