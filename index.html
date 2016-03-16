@@ -105,10 +105,13 @@
 			@media (min-width: 40rem) {
 				.Articles.Masonry .Article,
 				.Masonry-gridSizer {
-					width: 33%;
+					/* and 2% go in the .Masonry-gutterSizer (used by the js) */
+					width: 48%;
 				}
 			}
-			.Masonry-gutterSizer { width: 0; }
+			.Masonry-gutterSizer {
+				width: 2%;
+			}
 			.Articles.Masonry .Article {
 				padding-left: 1rem;
 				padding-right: 1rem;
@@ -148,7 +151,7 @@
 			}
 			.Container {
 				margin: 0 auto;
-				max-width: 60rem;
+				max-width: 80rem;
 				padding-left: 2rem;
 				padding-right: 2rem;
 			}
@@ -211,22 +214,22 @@
 					{block:Posts}
 						<article class="Article {block:PermalinkPage}Article--detail{/block:PermalinkPage} Article--{PostType} Article--{PostID} {TagsAsClasses}">
 							{block:Text}
-								<header class="Header">
+								<header class="Article-header">
 									{block:Title}
-										<h1 class="Title"><a href="{Permalink}">{Title}</a></h1>
+										<h1 class="Article-title"><a href="{Permalink}">{Title}</a></h1>
 									{/block:Title}
 								</header>
 
-								<div class="Detail">{Body}</div>
+								<div class="Article-body">{Body}</div>
 							{/block:Text}
 
 							{block:Photo}
-								<figure class="Media">
-									<div class="Image">
-										<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
-									</div>
+								<figure>
+									<a class="Article-media Article-media--photo" href="{Permalink}">
+										<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+									</a>
 									{block:Caption}
-										<figcaption class="Caption">
+										<figcaption class="Article-body">
 											{Caption}
 										</figcaption>
 									{/block:Caption}
@@ -235,66 +238,62 @@
 
 							{block:Panorama}
 								{LinkOpenTag}
-									<figure class="Media">
-										<div class="Image Image--panorama">
+									<figure>
+										<a class="Article-media Article-media--panorama" href="{Permalink}">
 											<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-										</div>
-										{block:PermalinkPage}
-											{block:Caption}
-												<figcaption class="Caption">
-													{Caption}
-												</figcaption>
-											{/block:Caption}
-										{/block:PermalinkPage}
+										</a>
+										{block:Caption}
+											<figcaption class="Article-body">
+												{Caption}
+											</figcaption>
+										{/block:Caption}
 									</figure>
 								{LinkCloseTag}
 							{/block:Panorama}
 
 							{block:Photoset}
-								<figure class="Media">
-									<div class="Photoset">
+								<figure>
+									<a class="Article-media Article-media--photoset" href="{Permalink}">
 										{Photoset-700}
-									</div>
-									{block:PermalinkPage}
-										{block:Caption}
-											<figcaption class="Caption">
-												{Caption}
-											</figcaption>
-										{/block:Caption}
-									{/block:PermalinkPage}
+									</a>
+									{block:Caption}
+										<figcaption class="Article-body">
+											{Caption}
+										</figcaption>
+									{/block:Caption}
 								</figure>
 							{/block:Photoset}
 
 							{block:Quote}
-								<blockquote class="Detail Quote">
-									<p>"{Quote}"</p>
+								<blockquote class="Article-body Blockquote">
+									<p class="Blockquote-quote">"{Quote}"</p>
 
 									{block:Source}
-										<cite class="Source">{Source}</cite>
+										<cite class="Blockquote-source">{Source}</cite>
 									{/block:Source}
 								</blockquote>
 							{/block:Quote}
 
 							{block:Link}
-								<header class="Link">
-									<h1 class="Title"><a href="{URL}" {Target}>{Name}</a></h1>
+								<header class="Article-header">
+									<h1 class="Article-title"><a href="{URL}" {Target}>{Name}</a></h1>
 								</header>
 
 								{block:Description}
-									<div class="Detail">{Description}</div>
+									<div class="Article-body">{Description}</div>
 								{/block:Description}
 							{/block:Link}
 
 							{block:Chat}
-								<header class="Title">
+								<header class="Article-header">
 									{block:Title}
-										<h1><a href="{Permalink}">{Title}</a></h1>
+										<h1 class="Article-title"><a href="{Permalink}">{Title}</a></h1>
 									{/block:Title}
 								</header>
 
-								<div class="Chat">
+								<div class="Article-body">
 									{block:Lines}
-										<p class="{Alt} user_{UserNumber}">
+										<p class="User User-{UserNumber}">
 											{block:Label}
 												<span class="label">{Label}</span>
 											{/block:Label}{Line}
@@ -304,39 +303,36 @@
 							{/block:Chat}
 
 							{block:Video}
-								<figure class="Media">
-									<div class="Video">
+								<figure>
+									<div class="Article-media">
 										{Video-500}
 									</div>
-									{block:PermalinkPage}
-										{block:Caption}
-											<figcaption class="Caption">
-												{Caption}
-											</figcaption>
-										{/block:Caption}
-									{/block:PermalinkPage}
+									{block:Caption}
+										<figcaption class="Article-body">
+											{Caption}
+										</figcaption>
+									{/block:Caption}
 								</figure>
 							{/block:Video}
 
 							{block:Audio}
-								<figure class="Media">
-
-									<div class="Image">
+								<figure>
+									<div class="Article-media">
 										{block:AlbumArt}
 											<img src="{AlbumArtURL}" alt="">
 										{/block:AlbumArt}
 									</div>
 
-									<div class="Audio">
-										{AudioPlayerBlack}
-									</div>
-
 									{block:Caption}
-										<figcaption class="Caption">
+										<figcaption class="Article-body">
 											{Caption}
 										</figcaption>
 									{/block:Caption}
 								</figure>
+
+								<div class="Article-media ">
+									{AudioPlayerBlack}
+								</div>
 							{/block:Audio}
 
 
