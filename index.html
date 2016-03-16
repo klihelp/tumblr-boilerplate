@@ -22,9 +22,9 @@
 		<link rel="icon" type="image/png" href="{PortraitURL-128}" sizes="192x192">
 		<link rel="icon" type="image/png" href="{PortraitURL-96}" sizes="96x96">
 		<link rel="icon" type="image/png" href="{PortraitURL-16}" sizes="16x16">
-		<meta name="msapplication-TileColor" content="#f5f5f5">
+		<meta name="msapplication-TileColor" content="{BackgroundColor}">
 		<meta name="msapplication-TileImage" content="{PortraitURL-128}">
-		<meta name="theme-color" content="#f5f5f5">
+		<meta name="theme-color" content="{BackgroundColor}">
 
 		{block:Description}
 			<meta name="description" content="{MetaDescription}" />
@@ -410,7 +410,7 @@
 					$masonryContainer: $('.Articles'),
 
 					init: function() {
-						console.log('init - running');
+						// console.log('init - running');
 
 						// on dom ready save the var
 						var self = this;
@@ -429,7 +429,7 @@
 					},
 
 					masonry: function() {
-						console.log('masonry - running');
+						// console.log('masonry - running');
 						this.$masonryContainer
 							.prepend('<div class="Masonry-gridSizer"></div><div class="Masonry-gutterSizer"></div>')
 							.masonry({
@@ -442,7 +442,7 @@
 					},
 
 					infiniteScrolling: function() {
-						console.log('infinite scrolling - running');
+						// console.log('infinite scrolling - running');
 
 						var self = this;
 
@@ -461,7 +461,6 @@
 								self.$siteMain.imagesLoaded().done( function( instance ) {
 									// console.log('masonry callback - running');
 									// trigger Masonry
-									console.log('self.$masonryContainer', self.$masonryContainer);
 									self.$masonryContainer.append($newElems).masonry('appended', $newElems);
 									$newElems.removeClass('is-hidden');
 								});
