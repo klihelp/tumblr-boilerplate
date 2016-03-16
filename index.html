@@ -50,6 +50,7 @@
 
 			/**
 				Base
+				Uniformizes html elements behavior, on top of Normalize.css
 			 */
 			*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
 			html {
@@ -68,6 +69,12 @@
 			iframe {
 				max-width: 100%;
 			}
+			img {
+				vertical-align: top;
+			}
+			figure {
+				margin: 0;
+			}
 			h1, h2, h3, h4 {
 				margin-top: 0;
 			}
@@ -82,6 +89,9 @@
 				underline;
 				color: black;
 				outline: 0;
+			}
+			p {
+				margin-top: 0;
 			}
 
 
@@ -112,16 +122,35 @@
 			}
 
 			/**
+				Infinite Scrolling
+			 */
+			#infscr-loading {
+				text-align: center;
+				padding: 2rem;
+			}
+
+			/**
 				Custom
 			 */
 			.SiteTitle q {
 				font-weight: {TitleFontWeight};
 				font-family: {TitleFont};
 			}
+			.SiteHeader {
+				text-align: center;
+			}
+			.SiteFooter {
+				text-align: center;
+				font-size: 0.8rem;
+			}
+			.Section {
+				padding-bottom: 3rem;
+			}
 			.Container {
-			    margin: 0 auto;
-			    padding-left: 1rem;
-			    padding-right: 1rem;
+				margin: 0 auto;
+				max-width: 60rem;
+				padding-left: 2rem;
+				padding-right: 2rem;
 			}
 			.Article {
 				border-bottom: 1px solid #ccc;
@@ -136,7 +165,7 @@
 
 	<body class="Site {block:PermalinkPage}Site--detail{/block:PermalinkPage}">
 
-		<header id="SiteHeader Container" class="SiteHeader">
+		<header id="SiteHeader" class="SiteHeader Section Container">
 			{block:ShowHeaderImage}
 				<figure class="HeaderImage">
 					<img src="{HeaderImage}" alt="{Title}">
@@ -164,7 +193,7 @@
 					{/block:SubmissionsEnabled}
 
 					{block:AskEnabled}
-						<a class="Nav-item" href="/submit">{AskLabel}</a>
+						<a class="Nav-item" href="/ask">{AskLabel}</a>
 					{/block:AskEnabled}
 				</nav>
 			{/block:HasPages}
@@ -318,6 +347,7 @@
 								{block:IfShowTags}
 									{block:HasTags}
 										<div class="Tags">
+											<span class="Tag Tag--postType">{PostType}</span>
 											{block:Tags}
 												<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
 											{/block:Tags}
@@ -325,14 +355,16 @@
 									{/block:HasTags}
 								{/block:IfShowTags}
 
-								<time class="Article-publishedTime"><a href="{Permalink}">{MonthNumberWithZero}/{DayOfMonthWithZero}/{Year}</a></time>
+								{block:Date}
+									<time class="Article-publishedTime"><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}</a></time>
+								{/block:Date}
 
 								{block:IfShowSocial}
 									<div class="Article-social">
 										<span class="Social Social--facebook"><a title="Share to Facebook" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
 										<span class="Social Social--twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
-										<span class="Social Social--reblog">{ReblogButton color="Black"}</span>
-										<span class="Social Social--like">{LikeButton color="Black"}</span>
+										<span class="Social Social--reblog">{ReblogButton color="grey" size="16"}</span>
+										<span class="Social Social--like">{LikeButton color="grey" size="16"}</span>
 										<span class="Social Social--url"><a href="{ShortURL}">Post URL</a></span>
 										<span class="Social Social--url"><a href="{EmbedUrl}">Embed URL</a></span>
 									</div>
@@ -352,7 +384,7 @@
 				</div>
 			</section>
 
-			{/block:PermalinkPage}
+			{block:PermalinkPage}
 				{block:IfDisqusShortname}
 					<section class="Section Section--comments">
 						<div id="disqus_thread"></div>
