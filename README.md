@@ -1,7 +1,7 @@
 tumblr-boilerplate
 ==================
 
-A clean starter theme to build yours
+A clean starter theme to build yours. This boilerplate is designed so it becomes easy to create a new working theme for a Tumblr blog.
 
 # Ressources
 
