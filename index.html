@@ -284,10 +284,12 @@
 						{/block:Quote}
 
 						{block:Link}
-						<header class="Article-header">
-							<h1 class="Article-title"><a href="{URL}" {Target}>{Name}</a></h1>
-						</header>
-
+						<a href="{URL}" {Target} class="Article-header">
+							{block:Host}
+							<p class="Article-subtitle">{Host}</p>
+							{/block:Host}
+							<h1 class="Article-title">{Name}</h1>
+						</a>
 						{block:Description}
 						<div class="Article-body">{Description}</div>
 						{/block:Description}
