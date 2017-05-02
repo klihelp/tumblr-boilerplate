@@ -3,11 +3,22 @@ tumblr-boilerplate
 
 A clean starter theme to build yours. This boilerplate is designed so it becomes easy to create a new working theme for a Tumblr blog.
 
-# Ressources
+# Getting started
 
-+ [Tumblr custom theme documentation](https://www.tumblr.com/docs/en/custom_themes)
+Two methods to get the exact same result:
 
-# Features
+## One click, theme install
+1. Install this [Tumblr theme](https://www.tumblr.com/theme/39303) on your blog
+2. Start customizing on its [customize page](http://www.tumblr.com/customize)
+
+## Copy paste the index.html
+1. create a blog with any theme
+2. go to its [customize page](http://www.tumblr.com/customize)
+3. click on 'Edit HTML' link beneath the title
+4. replace all markup with the one from this project's [`index.html`](https://raw.githubusercontent.com/hugovieilledent/tumblr-boilerplate/master/index.html).
+5. Save it
+
+# Theme features
 
 + All Tumblr post types supported (Text, Images, Audio...)
 + basic layout variables (colors, font, cover image)
@@ -15,25 +26,15 @@ A clean starter theme to build yours. This boilerplate is designed so it becomes
 + [Normalize.css](https://necolas.github.io/normalize.css/)
 + JavaScript / jQuery prototype setup
 
-# Optional features
+# Additional optional features
 
 Those are already setup but can easily be activated/deactivated
++ cover image
++ social sharing links
 + [infinite-scroll](https://github.com/infinite-scroll/infinite-scroll) (optional)
 + [Masonry.js](http://desandro.github.io/masonry/) easy setup (optional)
 + [Disqus](https://disqus.com/admin/tumblr/), for comments (optional)
 + [Google Analytics](http://www.google.com/analytics/) (optional)
-
-# Getting started
-
-To use the theme you will have to:
-
-1. create a blog with any theme
-2. go to its [customize page](http://www.tumblr.com/customize)
-3. click on 'Edit HTML' link beneath the title
-4. replace all markup with the one from this project's [`index.html`](https://raw.githubusercontent.com/hugovieilledent/tumblr-boilerplate/master/index.html).
-5. Save it
-
-That's it! You now have a beautiful, functional base to build whatever you want.
 
 ## Infinite scrolling
 
@@ -50,3 +51,7 @@ Go the [customize page](http://www.tumblr.com/customize) of your blog and fill i
 ## Disqus
 
 Go the [customize page](http://www.tumblr.com/customize) of your blog and fill in your [Disqus Shortname](https://disqus.com/admin/signup/?utm_source=New-Site).
+
+# Ressources
+
++ [Tumblr custom theme documentation](https://www.tumblr.com/docs/en/custom_themes)
