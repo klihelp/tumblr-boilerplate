@@ -70,7 +70,7 @@
 				line-height: 1.5;
 				font-size: 16px;
 				font-family: sans-serif;
-				font-family: 'Lato', 'Helvetica', sans-serif;
+				font-family: 'Georgia', 'Helvetica', sans-serif, serif;
 				font-weight: 300;
 			}
 			body {
@@ -146,15 +146,22 @@
 			/**
 				 Custom
        */
-			.SiteTitle q {
+
+			.Site {
+				padding-top: 2rem;
+			}
+			.SiteHeader,
+			.SiteFooter {
+				text-align: left;
+			}
+			.SiteTitle {
+				margin-bottom: 0.3rem;
+			}
+			.SiteTitle a {
 				font-weight: {TitleFontWeight};
 				font-family: {TitleFont};
 			}
-			.SiteHeader {
-				text-align: center;
-			}
 			.SiteFooter {
-				text-align: center;
 				font-size: 0.8rem;
 			}
 			.Section {
@@ -168,6 +175,14 @@
 			}
 			.Article {
 				padding-bottom: 1rem;
+				margin-bottom: 0;
+			}
+			.Article-title {
+				margin-bottom: 0;
+			}
+			.Article-subtitle {
+				margin-bottom: 0;
+				font-style: italic;
 			}
 
 			{CustomCSS}
