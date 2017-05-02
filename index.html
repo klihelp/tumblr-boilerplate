@@ -32,10 +32,10 @@
 
     <meta name="color:Background" content="#fff" />
     <meta name="color:Text" content="#000" />
-    <meta name="if:Grid Layout" content="1">
-    <meta name="if:Show Article Footer" content="1">
-    <meta name="if:Show tags" content="1">
-    <meta name="if:Show social" content="1">
+    <meta name="if:Grid Layout" content="0">
+    <meta name="if:Show Article Footer" content="-">
+    <meta name="if:Show tags" content="0">
+    <meta name="if:Show social" content="0">
     <meta name="text:Google analytics ID" content="">
     <meta name='text:Disqus Shortname' content='' />
 
@@ -43,136 +43,134 @@
     <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' type='text/css'>
 
     <style>
-     /**
-	Tumblr Starter Theme (boilerplate)
-	Copyright 2014-2016 Hugo Vieilledent, Oskar Rough and contributors
-	https://github.com/hugovieilledent/tumblr-boilerplate
-	
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation version 3 of the License.
-	
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-	
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-      */
+			/**
+				 Tumblr Starter Theme (boilerplate)
+				 Copyright 2014-2016 Hugo Vieilledent, Oskar Rough and contributors
+				 https://github.com/hugovieilledent/tumblr-boilerplate
 
-     /**
-	Base
-	Uniformizes html elements behavior, on top of Normalize.css
-      */
-     *, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
-     html {
-	 line-height: 1.5;
-	 font-size: 16px;
-	 font-family: sans-serif;
-	 font-family: 'Lato', 'Helvetica', sans-serif;
-	 font-weight: 300;
-     }
-     body {
-	 margin: 0;
-	 color: {color:Text};
-	 background-color: {BackgroundColor};
-     }
-     img,
-     iframe {
-	 max-width: 100%;
-	 vertical-align: top;
-     }
-     figure {
-	 margin: 0;
-     }
-     h1, h2, h3, h4 {
-	 margin-top: 0;
-     }
-     a,
-     a:visited {
-	 text-decoration: underline;
-	 color: {AccentColor};
-     }
-     a:hover,
-     a:focus {
-	 text-decoration:
-	 underline;
-	 color: black;
-	 outline: 0;
-     }
-     p {
-	 margin-top: 0;
-     }
+				 This program is free software: you can redistribute it and/or modify
+				 it under the terms of the GNU General Public License as published by
+				 the Free Software Foundation version 3 of the License.
+
+				 This program is distributed in the hope that it will be useful,
+				 but WITHOUT ANY WARRANTY; without even the implied warranty of
+				 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+				 GNU General Public License for more details.
+
+				 You should have received a copy of the GNU General Public License
+				 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+       */
+
+			/**
+				 Base
+				 Uniformizes html elements behavior, on top of Normalize.css
+       */
+			*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
+			html {
+				line-height: 1.5;
+				font-size: 16px;
+				font-family: sans-serif;
+				font-family: 'Lato', 'Helvetica', sans-serif;
+				font-weight: 300;
+			}
+			body {
+				margin: 0;
+				color: {color:Text};
+				background-color: {BackgroundColor};
+			}
+			img,
+			iframe {
+				max-width: 100%;
+				vertical-align: top;
+			}
+			figure {
+				margin: 0;
+			}
+			h1, h2, h3, h4 {
+				margin-top: 0;
+			}
+			a,
+			a:visited {
+				text-decoration: underline;
+				color: {AccentColor};
+			}
+			a:hover,
+			a:focus {
+				text-decoration:
+				underline;
+				color: black;
+				outline: 0;
+			}
+			p {
+				margin-top: 0;
+			}
 
 
-     /**
-	Masonry
-      */
-     .Articles.Masonry .Article,
-     .Masonry-gridSizer {
-	 width: 100%;
-     }
-     @media (min-width: 40rem) {
-	 .Articles.Masonry .Article,
-	 .Masonry-gridSizer {
-	     /* and 2% go in the .Masonry-gutterSizer (used by the js) */
-	     width: 48%;
-	 }
-     }
-     .Masonry-gutterSizer {
-	 width: 2%;
-     }
-     .Articles.Masonry .Article {
-	 padding-left: 1rem;
-	 padding-right: 1rem;
-     }
-     /* hide until .is-active (added by javascript when)*/
-     .Masonry {
-	 opacity: 0;
-     }
-     .Masonry.is-active {
-	 opacity: 1;
-     }
+			/**
+				 Masonry
+       */
+			.Articles.Masonry .Article,
+			.Masonry-gridSizer {
+				width: 100%;
+			}
+			@media (min-width: 40rem) {
+				.Articles.Masonry .Article,
+				.Masonry-gridSizer {
+					/* and 2% go in the .Masonry-gutterSizer (used by the js) */
+					width: 48%;
+				}
+			}
+			.Masonry-gutterSizer {
+				width: 2%;
+			}
+			.Articles.Masonry .Article {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+			/* hide until .is-active (added by javascript when)*/
+			.Masonry {
+				opacity: 0;
+			}
+			.Masonry.is-active {
+				opacity: 1;
+			}
 
-     /**
-	Infinite Scrolling
-      */
-     #infscr-loading {
-	 text-align: center;
-	 padding: 2rem;
-     }
+			/**
+				 Infinite Scrolling
+       */
+			#infscr-loading {
+				text-align: center;
+				padding: 2rem;
+			}
 
-     /**
-	Custom
-      */
-     .SiteTitle q {
-	 font-weight: {TitleFontWeight};
-	 font-family: {TitleFont};
-     }
-     .SiteHeader {
-	 text-align: center;
-     }
-     .SiteFooter {
-	 text-align: center;
-	 font-size: 0.8rem;
-     }
-     .Section {
-	 padding-bottom: 3rem;
-     }
-     .Container {
-	 margin: 0 auto;
-	 max-width: 80rem;
-	 padding-left: 2rem;
-	 padding-right: 2rem;
-     }
-     .Article {
-	 border-bottom: 1px solid #ccc;
-	 padding-bottom: 1rem;
-	 margin-bottom: 4rem;
-     }
+			/**
+				 Custom
+       */
+			.SiteTitle q {
+				font-weight: {TitleFontWeight};
+				font-family: {TitleFont};
+			}
+			.SiteHeader {
+				text-align: center;
+			}
+			.SiteFooter {
+				text-align: center;
+				font-size: 0.8rem;
+			}
+			.Section {
+				padding-bottom: 3rem;
+			}
+			.Container {
+				margin: 0 auto;
+				max-width: 80rem;
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+			.Article {
+				padding-bottom: 1rem;
+			}
 
-     {CustomCSS}
+			{CustomCSS}
 
     </style>
   </head>
@@ -182,7 +180,7 @@
     <header id="SiteHeader" class="SiteHeader Section Container">
       {block:ShowHeaderImage}
       <figure class="HeaderImage">
-	<img src="{HeaderImage}" alt="{Title}">
+				<img src="{HeaderImage}" alt="{Title}">
       </figure>
       {/block:ShowHeaderImage}
 
@@ -190,25 +188,25 @@
 
       {block:ShowDescription}
       <p class="SiteDescription">
-	{block:Description}
-	{Description}
-	{/block:Description}
+				{block:Description}
+				{Description}
+				{/block:Description}
       </p>
       {/block:ShowDescription}
 
       {block:HasPages}
       <nav class="Nav Nav--site">
-	{block:Pages}
-	<a class="Nav-item" href="{URL}">{Label}</a>
-	{/block:Pages}
+				{block:Pages}
+				<a class="Nav-item" href="{URL}">{Label}</a>
+				{/block:Pages}
 
-	{block:SubmissionsEnabled}
-	<a class="Nav-item" href="/submit">{SubmitLabel}</a>
-	{/block:SubmissionsEnabled}
+				{block:SubmissionsEnabled}
+				<a class="Nav-item" href="/submit">{SubmitLabel}</a>
+				{/block:SubmissionsEnabled}
 
-	{block:AskEnabled}
-	<a class="Nav-item" href="/ask">{AskLabel}</a>
-	{/block:AskEnabled}
+				{block:AskEnabled}
+				<a class="Nav-item" href="/ask">{AskLabel}</a>
+				{/block:AskEnabled}
       </nav>
       {/block:HasPages}
     </header>
@@ -216,218 +214,218 @@
     <main id="SiteMain" class="SiteMain">
       {block:TagPage}
       <section class="Section Section--breadcrumb Container">
-	<h1 class="Breadcrumb">{Tag}</h1>
+				<h1 class="Breadcrumb">{Tag}</h1>
       </section>
       {/block:TagPage}
 
       <section class="Section Section--articles Container">
-	<div class="Articles {block:IndexPage}{block:IfGridLayout}Masonry{/block:IfGridLayout}{/block:IndexPage}">
-	  {block:Posts}
-	  <article class="Article {block:PermalinkPage}Article--detail{/block:PermalinkPage} Article--{PostType} Article--{PostID} {TagsAsClasses}">
-	    {block:Text}
-	    <header class="Article-header">
-	      {block:Title}
-	      <h1 class="Article-title"><a href="{Permalink}">{Title}</a></h1>
-	      {/block:Title}
-	    </header>
+				<div class="Articles {block:IndexPage}{block:IfGridLayout}Masonry{/block:IfGridLayout}{/block:IndexPage}">
+					{block:Posts}
+					<article class="Article {block:PermalinkPage}Article--detail{/block:PermalinkPage} Article--{PostType} Article--{PostID} {TagsAsClasses}">
+						{block:Text}
+						<header class="Article-header">
+							{block:Title}
+							<h1 class="Article-title"><a href="{Permalink}">{Title}</a></h1>
+							{/block:Title}
+						</header>
 
-	    <div class="Article-body">{Body}</div>
-	    {/block:Text}
+						<div class="Article-body">{Body}</div>
+						{/block:Text}
 
-	    {block:Photo}
-	    <figure>
-	      <a class="Article-media Article-media--photo" href="{Permalink}">
-		<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-	      </a>
-	      {block:Caption}
-	      <figcaption class="Article-body">
-		{Caption}
-	      </figcaption>
-	      {/block:Caption}
-	    </figure>
-	    {/block:Photo}
+						{block:Photo}
+						<figure>
+							<a class="Article-media Article-media--photo" href="{Permalink}">
+								<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+							</a>
+							{block:Caption}
+							<figcaption class="Article-body">
+								{Caption}
+							</figcaption>
+							{/block:Caption}
+						</figure>
+						{/block:Photo}
 
-	    {block:Panorama}
-	    {LinkOpenTag}
-	    <figure>
-	      <a class="Article-media Article-media--panorama" href="{Permalink}">
-		<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-	      </a>
-	      {block:Caption}
-	      <figcaption class="Article-body">
-		{Caption}
-	      </figcaption>
-	      {/block:Caption}
-	    </figure>
-	    {LinkCloseTag}
-	    {/block:Panorama}
+						{block:Panorama}
+						{LinkOpenTag}
+						<figure>
+							<a class="Article-media Article-media--panorama" href="{Permalink}">
+								<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+							</a>
+							{block:Caption}
+							<figcaption class="Article-body">
+								{Caption}
+							</figcaption>
+							{/block:Caption}
+						</figure>
+						{LinkCloseTag}
+						{/block:Panorama}
 
-	    {block:Photoset}
-	    <figure>
-	      <a class="Article-media Article-media--photoset" href="{Permalink}">
-		{Photoset-700}
-	      </a>
-	      {block:Caption}
-	      <figcaption class="Article-body">
-		{Caption}
-	      </figcaption>
-	      {/block:Caption}
-	    </figure>
-	    {/block:Photoset}
+						{block:Photoset}
+						<figure>
+							<a class="Article-media Article-media--photoset" href="{Permalink}">
+								{Photoset-700}
+							</a>
+							{block:Caption}
+							<figcaption class="Article-body">
+								{Caption}
+							</figcaption>
+							{/block:Caption}
+						</figure>
+						{/block:Photoset}
 
-	    {block:Quote}
-	    <blockquote class="Article-body Blockquote">
-	      <p class="Blockquote-quote">"{Quote}"</p>
+						{block:Quote}
+						<blockquote class="Article-body Blockquote">
+							<p class="Blockquote-quote">"{Quote}"</p>
 
-	      {block:Source}
-	      <cite class="Blockquote-source">{Source}</cite>
-	      {/block:Source}
-	    </blockquote>
-	    {/block:Quote}
+							{block:Source}
+							<cite class="Blockquote-source">{Source}</cite>
+							{/block:Source}
+						</blockquote>
+						{/block:Quote}
 
-	    {block:Link}
-	    <header class="Article-header">
-	      <h1 class="Article-title"><a href="{URL}" {Target}>{Name}</a></h1>
-	    </header>
+						{block:Link}
+						<header class="Article-header">
+							<h1 class="Article-title"><a href="{URL}" {Target}>{Name}</a></h1>
+						</header>
 
-	    {block:Description}
-	    <div class="Article-body">{Description}</div>
-	    {/block:Description}
-	    {/block:Link}
+						{block:Description}
+						<div class="Article-body">{Description}</div>
+						{/block:Description}
+						{/block:Link}
 
-	    {block:Chat}
-	    <header class="Article-header">
-	      {block:Title}
-	      <h1 class="Article-title"><a href="{Permalink}">{Title}</a></h1>
-	      {/block:Title}
-	    </header>
+						{block:Chat}
+						<header class="Article-header">
+							{block:Title}
+							<h1 class="Article-title"><a href="{Permalink}">{Title}</a></h1>
+							{/block:Title}
+						</header>
 
-	    <div class="Article-body">
-	      {block:Lines}
-	      <p class="User User-{UserNumber}">
-		{block:Label}
-		<span class="label">{Label}</span>
-		{/block:Label}{Line}
-	      </p>
-	      {/block:Lines}
-	    </div>
-	    {/block:Chat}
+						<div class="Article-body">
+							{block:Lines}
+							<p class="User User-{UserNumber}">
+								{block:Label}
+								<span class="label">{Label}</span>
+								{/block:Label}{Line}
+							</p>
+							{/block:Lines}
+						</div>
+						{/block:Chat}
 
-	    {block:Video}
-	    <figure>
-	      <div class="Article-media">
-		{Video-500}
-	      </div>
-	      {block:Caption}
-	      <figcaption class="Article-body">
-		{Caption}
-	      </figcaption>
-	      {/block:Caption}
-	    </figure>
-	    {/block:Video}
+						{block:Video}
+						<figure>
+							<div class="Article-media">
+								{Video-500}
+							</div>
+							{block:Caption}
+							<figcaption class="Article-body">
+								{Caption}
+							</figcaption>
+							{/block:Caption}
+						</figure>
+						{/block:Video}
 
-	    {block:Audio}
-	    <figure>
-	      <div class="Article-media">
-		{block:AlbumArt}
-		<img src="{AlbumArtURL}" alt="">
-		{/block:AlbumArt}
-	      </div>
+						{block:Audio}
+						<figure>
+							<div class="Article-media">
+								{block:AlbumArt}
+								<img src="{AlbumArtURL}" alt="">
+								{/block:AlbumArt}
+							</div>
 
-	      {block:Caption}
-	      <figcaption class="Article-body">
-		{Caption}
-	      </figcaption>
-	      {/block:Caption}
-	    </figure>
+							{block:Caption}
+							<figcaption class="Article-body">
+								{Caption}
+							</figcaption>
+							{/block:Caption}
+						</figure>
 
-	    <div class="Article-media ">
-	      {AudioPlayerBlack}
-	    </div>
-	    {/block:Audio}
-
-
-	    {block:IfNotShowFooter}{/block:IfNotShowFooter}
-	    {block:IfShowArticleFooter}
-	    <footer class="Article-footer">
-
-	      {block:IfShowTags}
-	      {block:HasTags}
-	      <div class="Tags">
-		<span class="Tag Tag--postType">{PostType}</span>
-		{block:Tags}
-		<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
-		{/block:Tags}
-	      </div>
-	      {/block:HasTags}
-	      {/block:IfShowTags}
-
-	      {block:Date}
-	      <time class="Article-publishedTime"><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}</a></time>
-	      {/block:Date}
-
-	      {block:IfShowSocial}
-	      <div class="Article-social">
-		<span class="Social Social--facebook"><a title="Share to Facebook" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
-		<span class="Social Social--twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
-		<span class="Social Social--reblog">{ReblogButton color="grey" size="16"}</span>
-		<span class="Social Social--like">{LikeButton color="grey" size="16"}</span>
-		<span class="Social Social--url"><a href="{ShortURL}">Post URL</a></span>
-		<span class="Social Social--url"><a href="{EmbedUrl}">Embed URL</a></span>
-	      </div>
-	      {block:RebloggedFrom}
-	      <div class="Article-history">
-		<p>Reblogged from <a href="{ReblogParentURL}" title="{ReblogRootTitle}">{ReblogRootName}</a></p>
-		<p>Orignaly posted by <a href="{ReblogRootURL}" title="{ReblogRootTitle}">{ReblogRootName}</a></p>
-	      </div>
-	      {/block:RebloggedFrom}
-	      {/block:IfShowSocial}
-	    </footer>
-	    {/block:IfShowArticleFooter}
+						<div class="Article-media ">
+							{AudioPlayerBlack}
+						</div>
+						{/block:Audio}
 
 
-	  </article>
-	  {/block:Posts}
-	</div>
+						{block:IfNotShowFooter}{/block:IfNotShowFooter}
+						{block:IfShowArticleFooter}
+						<footer class="Article-footer">
+
+							{block:IfShowTags}
+							{block:HasTags}
+							<div class="Tags">
+								<span class="Tag Tag--postType">{PostType}</span>
+								{block:Tags}
+								<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
+								{/block:Tags}
+							</div>
+							{/block:HasTags}
+							{/block:IfShowTags}
+
+							{block:Date}
+							<time class="Article-publishedTime"><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}</a></time>
+							{/block:Date}
+
+							{block:IfShowSocial}
+							<div class="Article-social">
+								<span class="Social Social--facebook"><a title="Share to Facebook" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a></span>
+								<span class="Social Social--twitter"><a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a></span>
+								<span class="Social Social--reblog">{ReblogButton color="grey" size="16"}</span>
+								<span class="Social Social--like">{LikeButton color="grey" size="16"}</span>
+								<span class="Social Social--url"><a href="{ShortURL}">Post URL</a></span>
+								<span class="Social Social--url"><a href="{EmbedUrl}">Embed URL</a></span>
+							</div>
+							{block:RebloggedFrom}
+							<div class="Article-history">
+								<p>Reblogged from <a href="{ReblogParentURL}" title="{ReblogRootTitle}">{ReblogRootName}</a></p>
+								<p>Orignaly posted by <a href="{ReblogRootURL}" title="{ReblogRootTitle}">{ReblogRootName}</a></p>
+							</div>
+							{/block:RebloggedFrom}
+							{/block:IfShowSocial}
+						</footer>
+						{/block:IfShowArticleFooter}
+
+
+					</article>
+					{/block:Posts}
+				</div>
       </section>
 
       {block:PermalinkPage}
       {block:IfDisqusShortname}
       <section class="Section Section--comments">
-	<div id="disqus_thread"></div>
+				<div id="disqus_thread"></div>
       </section>
       {/block:IfDisqusShortname}
       {/block:PermalinkPage}
 
       <footer id="SiteFooter" class="SiteFooter Container">
-	<nav id="PaginationContainer">
-	  {block:IndexPage}
-	  <div class="Pagination Pagination--indexPage">
-	    {block:PreviousPage}
-	    <a class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
-	    {/block:PreviousPage}
+				<nav id="PaginationContainer">
+					{block:IndexPage}
+					<div class="Pagination Pagination--indexPage">
+						{block:PreviousPage}
+						<a class="Pagination-previous" href="{PreviousPage}">&#171; Previous</a>
+						{/block:PreviousPage}
 
-	    {block:NextPage}
-	    <a id="PaginationNext" class="Pagination-next" href="{NextPage}">Next &#187;</a>
-	    {/block:NextPage}
-	  </div>
-	  {/block:IndexPage}
+						{block:NextPage}
+						<a id="PaginationNext" class="Pagination-next" href="{NextPage}">Next &#187;</a>
+						{/block:NextPage}
+					</div>
+					{/block:IndexPage}
 
-	  {block:PermalinkPage}
-	  {block:PermalinkPagination}
-	  <div class="Pagination Pagination--permalinkPage">
-	    {block:NextPost}
-	    <a class="Pagination-previous" href="{NextPost}">&#171; Previous</a>
-	    {/block:NextPost}
+					{block:PermalinkPage}
+					{block:PermalinkPagination}
+					<div class="Pagination Pagination--permalinkPage">
+						{block:NextPost}
+						<a class="Pagination-previous" href="{NextPost}">&#171; Previous</a>
+						{/block:NextPost}
 
-	    {block:PreviousPost}
-	    <a class="Pagination-next" href="{PreviousPost}">Next &#187;</a>
-	    {/block:PreviousPost}
-	  </div>
-	  {/block:PermalinkPagination}
-	  {/block:PermalinkPage}
-	</nav>
-	<div>- {Title} / {CopyrightYears} -</div>
+						{block:PreviousPost}
+						<a class="Pagination-next" href="{PreviousPost}">Next &#187;</a>
+						{/block:PreviousPost}
+					</div>
+					{/block:PermalinkPagination}
+					{/block:PermalinkPage}
+				</nav>
+				<div>- {Title} / {CopyrightYears} -</div>
       </footer>
     </main>
 
@@ -438,80 +436,80 @@
       <script src="http://static.tumblr.com/qdi9m50/XbBn0g0nw/masonry.pkgd.min.js"></script>
 
       <script>
-       var TumblrStarterTheme = function() {
-	 this.init();
-       };
+				var TumblrStarterTheme = function() {
+					this.init();
+				};
 
-       TumblrStarterTheme.prototype = {
+				TumblrStarterTheme.prototype = {
 
-	 // global variables
-	 $siteMain: null,
-	 $masonryContainer: $('.Articles'),
+					// global variables
+					$siteMain: null,
+					$masonryContainer: $('.Articles'),
 
-	 init: function() {
-	   // console.log('init - running');
+					init: function() {
+						// console.log('init - running');
 
-	   // on dom ready save the var
-	   var self = this;
-	   this.$siteMain = $('#SiteMain');
+						// on dom ready save the var
+						var self = this;
+						this.$siteMain = $('#SiteMain');
 
-	   // run imgLoaded then Masonry if Articles has class 'Masonry'
-	   if (this.$masonryContainer.hasClass('Masonry')) {
-	     this.$siteMain.imagesLoaded().done( function( instance ) {
-	       // console.log("images loaded - running");
-	       self.masonry();
-	     });
-	   }
+						// run imgLoaded then Masonry if Articles has class 'Masonry'
+						if (this.$masonryContainer.hasClass('Masonry')) {
+							this.$siteMain.imagesLoaded().done( function( instance ) {
+								// console.log("images loaded - running");
+								self.masonry();
+							});
+						}
 
-	   // run infinite scrolling anyway
-	   this.infiniteScrolling();
-	 },
+						// run infinite scrolling anyway
+						this.infiniteScrolling();
+					},
 
-	 masonry: function() {
-	   // console.log('masonry - running');
-	   this.$masonryContainer
-	       .prepend('<div class="Masonry-gridSizer"></div><div class="Masonry-gutterSizer"></div>')
-	       .masonry({
-		 columnWidth: '.Masonry-gridSizer',
-		 gutter: '.Masonry-gutterSizer',
-		 itemSelector: '.Article',
-		 transitionDuration: '100ms',
-		 bufferPx: 300, // trigger 'next' earlier
-	       }).addClass('is-active');
-	 },
+					masonry: function() {
+						// console.log('masonry - running');
+						this.$masonryContainer
+								.prepend('<div class="Masonry-gridSizer"></div><div class="Masonry-gutterSizer"></div>')
+								.masonry({
+									columnWidth: '.Masonry-gridSizer',
+									gutter: '.Masonry-gutterSizer',
+									itemSelector: '.Article',
+									transitionDuration: '100ms',
+									bufferPx: 300, // trigger 'next' earlier
+								}).addClass('is-active');
+					},
 
-	 infiniteScrolling: function() {
-	   // console.log('infinite scrolling - running');
+					infiniteScrolling: function() {
+						// console.log('infinite scrolling - running');
 
-	   var self = this;
+						var self = this;
 
-	   this.$siteMain.infinitescroll({
-	     navSelector  : "#PaginationContainer", // selector for the paged navigation (it will be hidden)
-	     nextSelector : "#PaginationNext", // selector for the NEXT link (to page 2)
-	     itemSelector : ".Article", // selector for all items you'll <retrieve></retrieve>
-	     debug : false, // enable debug messaging
-	     loadingText : "", // text accompanying loading image
-	     img: "null"
-	   }, function( newElements ) {
-	     // callback to include new masonry items
-	     if (self.$masonryContainer.hasClass('Masonry')) {
-	       // call imagesLoaded first
-	       var $newElems = $( newElements ).addClass('is-hidden');
-	       self.$siteMain.imagesLoaded().done( function( instance ) {
-		 // console.log('masonry callback - running');
-		 // trigger Masonry
-		 self.$masonryContainer.append($newElems).masonry('appended', $newElems);
-		 $newElems.removeClass('is-hidden');
-	       });
-	     }
-	   });
-	 }
-       };
+						this.$siteMain.infinitescroll({
+							navSelector  : "#PaginationContainer", // selector for the paged navigation (it will be hidden)
+							nextSelector : "#PaginationNext", // selector for the NEXT link (to page 2)
+							itemSelector : ".Article", // selector for all items you'll <retrieve></retrieve>
+							debug : false, // enable debug messaging
+							loadingText : "", // text accompanying loading image
+							img: "null"
+						}, function( newElements ) {
+							// callback to include new masonry items
+							if (self.$masonryContainer.hasClass('Masonry')) {
+								// call imagesLoaded first
+								var $newElems = $( newElements ).addClass('is-hidden');
+								self.$siteMain.imagesLoaded().done( function( instance ) {
+									// console.log('masonry callback - running');
+									// trigger Masonry
+									self.$masonryContainer.append($newElems).masonry('appended', $newElems);
+									$newElems.removeClass('is-hidden');
+								});
+							}
+						});
+					}
+				};
 
-       // Create a new instance of TumblrStarterTheme app and launches TumblrStarterTheme.init
-       $(document).ready(function() {
-	 var tumblrStarterTheme = new TumblrStarterTheme();
-       });
+				// Create a new instance of TumblrStarterTheme app and launches TumblrStarterTheme.init
+				$(document).ready(function() {
+					var tumblrStarterTheme = new TumblrStarterTheme();
+				});
       </script>
 
       {block:IfGoogleAnalyticsID}
@@ -520,15 +518,15 @@
 
       {block:IfDisqusShortname}
       <script type="text/javascript">
-       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-       var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
 
-       /* * * DON'T EDIT BELOW THIS LINE * * */
-       (function() {
-	 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
       </script>
       {/block:IfDisqusShortname}
     </div>
