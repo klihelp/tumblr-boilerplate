@@ -1,7 +1,7 @@
 tumblr-boilerplate
 ==================
 
-A clean starter theme to build yours. This boilerplate is designed so it becomes easy to create a new working theme for a Tumblr blog.
+A clean starter theme to build yours. This boilerplate is designed so it becomes easy to create a new working theme for a Tumblr blog. Open an issue for support.
 
 # Getting started
 
@@ -55,3 +55,5 @@ Go the [customize page](http://www.tumblr.com/customize) of your blog and fill i
 # Ressources
 
 + [Tumblr custom theme documentation](https://www.tumblr.com/docs/en/custom_themes)
++ [Balcony themes for Tumblr](http://balconythemes.tumblr.com)
++ [Google group forum](https://groups.google.com/forum/#!forum/balcony-themes)
