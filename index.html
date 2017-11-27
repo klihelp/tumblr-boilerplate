@@ -41,6 +41,8 @@
 		<meta name="if:Show tags" content="0">
 		<meta name="if:Show social" content="0">
 		<meta name="if:Show Following" content="0">
+		<meta name="if:Show Follow Link" content="0">
+		<meta name="if:Show Navigation" content="1">
 
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' type='text/css'>
@@ -69,7 +71,12 @@
 				 Base
 				 Uniformizes html elements behavior, on top of Normalize.css
 			 */
-			*, *:before, *:after { box-sizing: border-box; -moz-box-sizing: border-box; }
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+			}
 			html {
 				line-height: 1.5;
 				font-size: 16px;
@@ -117,7 +124,7 @@
 			}
 
 			/**
-				 Masonry
+				 Masonry Grid
 			 */
 			.Articles.Masonry .Article,
 			.Masonry-gridSizer {
@@ -128,6 +135,13 @@
 				.Masonry-gridSizer {
 					/* and 2% go in the .Masonry-gutterSizer (used by the js) */
 					width: 48%;
+				}
+			}
+			@media (min-width: 60rem) {
+				.Articles.Masonry .Article,
+				.Masonry-gridSizer {
+					/* and 2% go in the .Masonry-gutterSizer (used by the js) */
+					width: 31%;
 				}
 			}
 			.Masonry-gutterSizer {
@@ -145,7 +159,7 @@
 				opacity: 1;
 			}
 
-			/**
+			/*
 				 Infinite Scrolling
 			 */
 			#infscr-loading {
@@ -153,10 +167,7 @@
 				padding: 1.5rem;
 			}
 
-			/**
-				 Custom
-			 */
-
+			/* Site globals  */
 			.Site {
 				padding-top: 1.5rem;
 			}
@@ -174,21 +185,32 @@
 			.SiteFooter {
 				font-size: 0.8rem;
 			}
+
+			/* Vertical rythm */
 			.Section {
 				padding-bottom: 1.5rem;
 			}
+
+			/* Horiwontal rythm */
 			.Container {
 				margin: 0 auto;
 				max-width: 80rem;
 				padding-left: 1.5rem;
 				padding-right: 1.5rem;
 			}
+
+			/* Navigation */
 			.Nav-item {
 				margin-right: 1rem;
 			}
+
+			/* Articles */
 			.Article {
 				padding-bottom: 1rem;
 				margin-bottom: 0;
+			}
+			.Article--text .Article-header {
+				margin-bottom: 0.3rem;
 			}
 			.Article-title {
 				margin-bottom: 0;
@@ -197,6 +219,8 @@
 				margin-bottom: 0;
 				font-style: italic;
 			}
+
+			/* Grid */
 			.Grid {
 				display: flex;
 				flex-wrap: wrap;
@@ -229,6 +253,7 @@
 			{/block:Description}
 			{/block:ShowDescription}
 
+			{block:IfShowNavigation}
 			{block:HasPages}
 			<nav class="Nav Nav--site">
 				{block:Pages}
@@ -244,6 +269,7 @@
 				{/block:AskEnabled}
 			</nav>
 			{/block:HasPages}
+			{/block:IfShowNavigation}
 		</header>
 
 		<main id="SiteMain" class="SiteMain">
@@ -492,7 +518,7 @@
 					{/block:PermalinkPagination}
 					{/block:PermalinkPage}
 				</nav>
-				<div>- {Title} / {CopyrightYears} -</div>
+				<div>- {Title} / {CopyrightYears} (<a href="https://tumblr.internet4000.com">credits</a>) -</div>
 			</footer>
 		</main>
 
