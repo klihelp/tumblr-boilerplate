@@ -194,10 +194,13 @@
 
 			/* Horizontal rhythm */
 			.Container {
-				margin: 0 auto;
-				max-width: 80rem;
+				max-width: 50rem;
 				padding-left: 1.5rem;
 				padding-right: 1.5rem;
+			}
+			.Container--full {
+				max-width: 100%;
+				width: 100%;
 			}
 
 			/* Navigation */
@@ -285,8 +288,8 @@
 			</section>
 			{/block:TagPage}
 
-			<section class="Section Section--articles Container">
-				<div class="Articles {block:IndexPage}{block:IfGridLayout}Masonry{/block:IfGridLayout}{/block:IndexPage}">
+			<section class="Section Section--articles">
+				<div class="Articles Container {block:IndexPage}{block:IfGridLayout}Masonry Container--full{/block:IfGridLayout}{/block:IndexPage}">
 					{block:Posts}
 					<article class="Article {block:PermalinkPage}Article--detail{/block:PermalinkPage} Article--{PostType} Article--{PostID} {TagsAsClasses}">
 						{block:Text}
