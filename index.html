@@ -30,10 +30,11 @@
 		<meta name="description" content="{MetaDescription}" />
 		{/block:Description}
 
-		<meta name="color:Background" content="#fff" />
-		<meta name="color:Text" content="#000" />
+		<meta name="color:TextColor" content="#000" />
+    <meta name="font:TextFont" content="Georgia, serif, Arial, Helvetica, sans-serif"/>
 		<meta name="text:Google analytics ID" content="">
 		<meta name="text:Disqus Shortname" content=""/>
+
 		<meta name="if:Grid Layout" content="0">
 		<meta name="if:Show Article Footer" content="0">
 		<meta name="if:Show Article Footer" content="0">
@@ -80,12 +81,14 @@
 				line-height: 1.5;
 				font-size: 16px;
 				font-family: sans-serif;
-				font-family: 'Georgia', 'Helvetica', sans-serif, serif;
+				font-family: {font:TextFont};
 				font-weight: 300;
 			}
 			body {
 				margin: 0;
-				color: {color:Text};
+				padding: 1rem;
+				font-family: Georgia;
+				color: {color:TextColor};
 				background-color: {BackgroundColor};
 			}
 			img,
@@ -176,9 +179,6 @@
 			.SiteFooter {
 				text-align: left;
 			}
-			.SiteTitle {
-				margin-bottom: 0.3rem;
-			}
 			.SiteTitle a {
 				font-weight: {TitleFontWeight};
 				font-family: {TitleFont};
@@ -210,16 +210,18 @@
 
 			/* Articles */
 			.Article {
-				padding-bottom: 1rem;
+				margin-bottom: 0;
+				padding-bottom: 2rem;
+			}
+			.Article-body {
+				margin-bottom: 1rem;
+			}
+			.Article-body p:last-child {
 				margin-bottom: 0;
 			}
-
 			.Article-header {
 				margin-bottom: 1rem;
 				display: block;
-			}
-			.Article--text .Article-header {
-				margin-bottom: 0.5rem;
 			}
 			.Article-title {
 				margin-bottom: 0;
@@ -227,6 +229,15 @@
 			.Article-subtitle {
 				margin-bottom: 0;
 				font-style: italic;
+			}
+			.Article-footer {
+				border-left: 2px solid black;
+				padding-left: 0.5rem;
+			}
+
+
+			.Article--text .Article-header {
+				margin-bottom: 0.5rem;
 			}
 
 			/* Grid */
@@ -421,20 +432,19 @@
 						{block:IfShowArticleFooter}
 						<footer class="Article-footer">
 
+							{block:Date}
+							<time class="Article-publishedTime"><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}</a></time>
+							{/block:Date}
+
 							{block:IfShowTags}
 							{block:HasTags}
 							<div class="Tags">
-								<span class="Tag Tag--postType">{PostType}</span>
 								{block:Tags}
 								<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
 								{/block:Tags}
 							</div>
 							{/block:HasTags}
 							{/block:IfShowTags}
-
-							{block:Date}
-							<time class="Article-publishedTime"><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}</a></time>
-							{/block:Date}
 
 							{block:IfShowSocial}
 							<div class="Article-social">
